@@ -96,6 +96,24 @@ const routes = [
         name: 'editBook',
         component: () => import('@/views/book/Edit')
       },
+
+
+
+      // ===== borrow =====
+      {
+        path: 'buyList',
+        name: 'buyList',
+        component: () => import('@/views/buy/List')
+      },
+      {
+        path: 'addBuy',
+        name: 'addBuy',
+        component: () => import('@/views/buy/Add')
+      },
+
+
+
+
       // ===== borrow =====
       {
         path: 'borrowList',

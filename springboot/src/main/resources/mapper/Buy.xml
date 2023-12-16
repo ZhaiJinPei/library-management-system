@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.BuyMapper">
+
+
+    <insert id="save">
+        insert into buy(isbn, email, cDate, count, price, total)
+        values (#{ isbn }, #{ email }, #{ cDate }, #{count}, #{price}, #{total})
+    </insert>
+
+    <select id="listByCondition" resultType="com.example.springboot.entity.Buy">
+        select b1.*, b2.name, b2.credit, p.username, p.phone, u.uid
+        from buy b1, book b2, person p, user u
+        <where>
+            b1.email = p.email and b1.isbn = b2.isbn and b1.email = u.email
+            <if test="username != null and username != ''">
+                and p.username like concat('%', #{ username }, '%')
+            </if>
+            <if test="isbn != null and isbn != ''">
+                and b1.isbn like concat('%', #{ isbn }, '%')
+            </if>
+            <if test="name != null and name != ''">
+                and b2.name like concat('%', #{ name }, '%')
+            </if>
+        </where>
+        order by cDate desc
+    </select>
+
+</mapper>

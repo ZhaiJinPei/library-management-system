@@ -86,6 +86,11 @@
             </template>
             <el-menu-item index="/addBook">Add New Book</el-menu-item>
             <el-menu-item index="/BookList">Book List</el-menu-item>
+
+            <el-menu-item index="/addBuy">New Buy Record</el-menu-item>
+            <el-menu-item index="/BuyList">Buy Records</el-menu-item>
+
+
           </el-submenu>
           <!-- borrow -->
           <el-submenu index="borrow">
