@@ -3,24 +3,24 @@ create schema PP0aLM;
 use PP0aLM;
 
 create table person (
-	email 		varchar(255)		not null, 
-    fname		varchar(255)		not null, 
-    minit 		varchar(10), 
-    lname		varchar(255) 		not null, 
+	email 		varchar(255)		not null,
+    fname		varchar(255)		not null,
+    minit 		varchar(10),
+    lname		varchar(255) 		not null,
     username	varchar(25)			not null,
-    province	varchar(255)		not null, 
-    city		varchar(255)		not null, 
+    province	varchar(255)		not null,
+    city		varchar(255)		not null,
     street		varchar(255),
-    phone		varchar(10)			not null, 
+    phone		varchar(10)			not null,
     status 		tinyint,
     primary key(email)
-); 
+);
 
 create table user (
-	email		varchar(255)		not null, 
-    gender 		varchar(255)		not null, 
+	email		varchar(255)		not null,
+    gender 		varchar(255)		not null,
     age 		int					not null,
-	uid 		varchar(255)		not null, 
+	uid 		varchar(255)		not null,
     cTime		datetime,
     uTime		datetime,
     aCredit 	int,
@@ -29,11 +29,11 @@ create table user (
 );
 
 create table admin (
-	email 		varchar(255)		not null, 
-    passwrd 	varchar(30)			not null, 
+	email 		varchar(255)		not null,
+    passwrd 	varchar(30)			not null,
     primary key(email),
     foreign key(email) references person(email)
-); 
+);
 
 create table category (
 	id 			int 				not null,
@@ -64,7 +64,7 @@ create table book (
 create table borrow (
 	isbn 		varchar(255)		not null,
     email		varchar(255)		not null,
-    id 			int 				not null, 
+    id 			int 				not null,
     cDate 		datetime,
     bstatus 	varchar(255),
     duration 	int,
@@ -78,7 +78,7 @@ create table borrow (
 create table reterns (
 	isbn 		varchar(255)		not null,
     email		varchar(255)		not null,
-    id 			int 				not null, 
+    id 			int 				not null,
     cDate 		datetime,
     bstatus 	varchar(255),
     duration 	int,
@@ -88,3 +88,19 @@ create table reterns (
     foreign key(isbn) references book(isbn) on delete cascade,
     foreign key(email) references user(email) on delete cascade
 );
+
+create table buy (
+                     bid         int	                 auto_increment,
+                     isbn        varchar(255)         not null,
+                     email       varchar(255)         not null,
+                     cDate       datetime,
+                     count       int,
+                     price       int,
+                     total       int,
+                     username    varchar(255),
+                     uid         varchar(255),
+                     name        varchar(255),
+                     primary key (bid, isbn, email),
+                     foreign key(isbn) references book(isbn) on delete cascade,
+                     foreign key(email) references user(email) on delete cascade
+)

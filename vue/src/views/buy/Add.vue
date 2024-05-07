@@ -152,6 +152,7 @@ export default {
     selectUser() {
       const user = this.users.find(v => v.email === this.form.email)
       request.get("/user/" + user.email).then(res => {
+        this.form.uid = res.data.uid
         this.form.phone = res.data.phone
         this.form.username = res.data.username
         this.form.acredit = res.data.acredit

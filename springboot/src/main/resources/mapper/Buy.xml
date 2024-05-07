@@ -6,8 +6,8 @@
 
 
     <insert id="save">
-        insert into buy(isbn, email, cDate, count, price, total)
-        values (#{ isbn }, #{ email }, #{ cDate }, #{count}, #{price}, #{total})
+        insert into buy(isbn, email, cDate, count, price, total, username, uid, name)
+        values (#{ isbn }, #{ email }, #{ cDate }, #{ count }, #{ price }, #{ total }, #{ username }, #{ uid }, #{ name })
     </insert>
 
     <select id="listByCondition" resultType="com.example.springboot.entity.Buy">

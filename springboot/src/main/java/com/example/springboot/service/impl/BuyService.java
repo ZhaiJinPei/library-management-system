@@ -50,9 +50,14 @@ public class BuyService implements IBuyService {
     public void save(Buy buy) {
         buy.setCDate(LocalDateTime.now());
         String isbn = buy.getIsbn();
+        String email = buy.getEmail();
         Book book = bookMapper.getByISBN(isbn);
+        User user = userMapper.getByEmail(email);
         if(Objects.isNull(book)) {
             throw new ServiceException("Book does not exist");
+        }
+        if(Objects.isNull(user)) {
+            throw new ServiceException("User does not exist");
         }
         mapper.save(buy);
     }

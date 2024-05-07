@@ -244,3 +244,29 @@ INSERT INTO `user` VALUES ('wf2887@outlook.com', 'Male', 25, '202212241314368891
 INSERT INTO `user` VALUES ('yoshida124@yahoo.com', 'Male', 33, '202212241065002931', '2022-12-24 17:41:54', '2023-01-06 00:06:47', 450);
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+-- ----------------------------
+-- Table structure for buy
+-- ----------------------------
+DROP TABLE IF EXISTS `buy`;
+CREATE TABLE `buy`   (
+                         `bid` int AUTO_INCREMENT,
+                         `isbn` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                         `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                         `cDate` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+                         `count` int NULL DEFAULT 0,
+                         `price` int NULL DEFAULT 0,
+                         `total` int NULL DEFAULT 0,
+                         `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+                         `uid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+                         `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+                         PRIMARY KEY(bid, isbn, email),
+                         FOREIGN KEY(isbn) REFERENCES book(isbn) ON DELETE CASCADE,
+                         FOREIGN KEY(email) REFERENCES user(email) ON DELETE CASCADE
+)
+
+
+-- ----------------------------
+-- Records of buy
+-- ----------------------------
