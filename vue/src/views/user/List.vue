@@ -35,7 +35,7 @@
         <el-table-column prop="acredit" label="Score" width="70"></el-table-column>
         <el-table-column fixed="right" label="Operations" width="265">
           <template v-slot="scope">
-            <el-button type="success" @click="chargeOpen(scope.row)">Reharge</el-button>
+            <el-button type="success" @click="chargeOpen(scope.row)">Recharge</el-button>
             <el-button type="primary" style="margin-left: 2px;" @click="$router.push('/editUser?email=' + scope.row.email)">Edit</el-button>
             <el-popconfirm
                 confirm-button-text='Yes'

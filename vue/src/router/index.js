@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 import Layout from "@/views/Layout";
 
 Vue.use(VueRouter)
-
 const routes = [
   // ===== login =====
   {

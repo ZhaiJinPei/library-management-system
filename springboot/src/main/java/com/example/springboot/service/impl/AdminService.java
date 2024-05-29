@@ -23,8 +23,8 @@ import java.util.List;
 @Slf4j
 @Service
 public class AdminService implements IAdminService {
-    private static String DEFAULT_PASS = "000000";
-    private static String PASS_SALT = "random";
+    private static final String DEFAULT_PASS = "000000";
+    private static final String PASS_SALT = "random";
 
     @Autowired
     AdminMapper adminMapper;

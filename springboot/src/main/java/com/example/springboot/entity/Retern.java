@@ -22,7 +22,7 @@ public class Retern {
     private String bStatus; // borrow_status
     private Integer duration; // days of the borrow
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime rDate; // the actual return date
+    private LocalDateTime rDate; // the due return date
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime aDate; // the actual return date
 }

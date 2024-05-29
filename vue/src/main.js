@@ -6,6 +6,7 @@ import router from './router'
 import '@/assets/global.css'
 import locale from '../node_modules/element-ui/lib/locale/lang/en'
 
+
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale });
 

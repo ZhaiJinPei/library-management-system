@@ -3,9 +3,10 @@
     <!-- header -->
     <div style="height: 80px; line-height: 80px; background-color: white; width: 100%; margin-bottom: 2px; display: flex">
       <!-- logo and title -->
-      <div style="width: 800px">
-        <img src="@/assets/logo.png" alt="" style="width: 50px; height: 50px; position: relative; top: 15px; left: 10px">
-        <span style="margin-left: 20px; font-size: 40px; font-family: Arial">LIBRARY MANAGEMENT SYSTEM</span>
+      <div style="width: 1000px">
+        <img alt="" src="@/assets/logo.png"
+             style="width: 50px; height: 50px; position: relative; top: 10px; left: 25px">
+        <span style="margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
       </div>
       <!-- admins' info -->
       <div style="flex: 1; text-align: right; margin-right: 40px">
@@ -116,6 +117,7 @@
         <router-view/>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 
 </template>
@@ -123,8 +125,10 @@
 <script>
 import Cookies from "js-cookie";
 import request from "@/utils/request";
+import Footer from "@/views/Footer";
 
 export default {
+  components: {Footer},
   name: "Layout",
   data() {
     const checkConfirm = (rule, value, callback) => {
@@ -175,7 +179,7 @@ export default {
           this.form.email = this.admin.email // get email
           request.put('admin/changePass', this.form).then(res => {
             if(res.code === '200') {
-              this.$notify("Updated")
+              this.$notify.success("Updated")
               this.$refs['ruleForm'].resetFields()
               this.dialogFormVisible = false
               // Cookies.remove('admin')
@@ -186,7 +190,8 @@ export default {
           })
         }
       })
-    }
+    },
+
   }
 }
 </script>
