@@ -1,2 +1,4 @@
 1. drop constraint
 2. alter table foreign key follow with on delete cascade
+
+-javaagent:F:\skywalking-agent\skywalking-agent.jar=agent.service_name=skywalking-demo,collector.backend_service=127.0.0.1:11800

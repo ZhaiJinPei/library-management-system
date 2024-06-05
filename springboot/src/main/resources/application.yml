@@ -6,7 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pp0alm?serverTimezone=GMT-5&allowMultiQueries=true # allow multi queries
     username: root
-    password: root  # my password
+    password: 123456  # my password
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+

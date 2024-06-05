@@ -21,7 +21,9 @@
         <el-table-column prop="uDate" label="Update Date" width="110"></el-table-column>
         <el-table-column prop="cover" label="Cover" width="100">
           <template v-slot="scope1">
-            <el-image :src="scope1.row.cover" style="width: 50%; height: 50%"></el-image>
+            <div v-viewer.static="{movable:false,title:false}" class="cover-viewer">
+              <el-image :src="scope1.row.cover" style="width: 50%; height: 50%"></el-image>
+            </div>
           </template>
         </el-table-column>
         <el-table-column prop="credit" label="Score" width="85"></el-table-column>
@@ -53,7 +55,11 @@
     </div>
   </div>
 </template>
-
+<style>
+.cover-viewer:hover {
+  opacity: 0.5;
+}
+</style>
 <script>
 import request from "@/utils/request";
 
