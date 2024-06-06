@@ -1,23 +1,26 @@
 <template>
-  <div style="padding: 10px;">
-    <!-- date range selector -->
-    <div>
-      <el-select v-model="form.dateRange" placeholder="Select date range" @change="load">
-        <el-option
-            v-for="item in range"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-        </el-option>
-      </el-select>
-    </div>
-    <!-- line chart area -->
-    <div style="margin-top: 10px">
-      <el-card>
-        <div id="lineChart" style="width: 100%; height: 700px"></div>
-      </el-card>
+  <div style="height: 100%">
+    <div style="padding: 10px;">
+      <!-- date range selector -->
+      <div>
+        <el-select v-model="form.dateRange" placeholder="Select date range" @change="load">
+          <el-option
+              v-for="item in range"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+      <!-- line chart area -->
+      <div style="margin-top: 10px">
+        <el-card>
+          <div id="lineChart" style="width: 100%; height: 1000px"></div>
+        </el-card>
+      </div>
     </div>
   </div>
+
 </template>
 
 <script>

@@ -1,12 +1,16 @@
 <template>
-  <div style="height: 100vh; overflow: hidden">
-    <div style="width: 500px; height: 400px; background-color: white; border-radius: 10px; padding: 50px; margin: 150px auto">
+  <!--  <div class="box" style="height: 100vh; overflow: hidden">-->
+  <div ref="vantaRef" class="box" style=" height: 100vh ;">
+    <div class="banner" rel="vantaRel" style="width: 600px; height: 500px;  border-radius: 10px; padding: 50px;">
       <!-- header -->
-      <div style="margin-top: 50px; text-align: center; font-size: 40px; font-weight: bold; font-family: Arial; color: mediumblue">
-        Sign in
+      <div
+          style="margin-top: 50px; text-align: center; font-size: 80px;  font-family: '华文楷体',cursive; color: #fff9f9">
+        图书管理系统<br>
+        <div style="margin-top:5px ;font-size: 28px;font-family: 'roboto mono', monospace">Library Management System
+        </div>
       </div>
       <!-- form -->
-      <div style="margin-top: 22px">
+      <div style="margin-top: 50px">
         <el-form :model="admin" :rules="rules" ref="loginForm">
           <el-form-item prop="email">
             <el-input placeholder="Enter email" prefix-icon="el-icon-user" v-model="admin.email"></el-input>
@@ -18,10 +22,13 @@
       </div>
       <!-- button -->
       <div>
-        <el-button style="width: 100%" type="primary" @click="login">sign in</el-button>
+        <el-button style="width: 100%;font-size: 25px;font-family: 'Microsoft YaHei UI Light',sans-serif" type="primary"
+                   @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
+        </el-button>
       </div>
     </div>
   </div>
+  <!--  </div>-->
 </template>
 
 <script>
@@ -29,6 +36,9 @@
 
 import request from "@/utils/request";
 import Cookies from "js-cookie"
+
+import waves from "vanta/src/vanta.waves";
+import * as THREE from "three";
 
 export default {
   name: "login",
@@ -61,10 +71,48 @@ export default {
         }
       })
     }
+  },
+  mounted() {
+    this.vantaEffect = waves({
+      el: this.$refs.vantaRef,
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+    });
+  },
+  beforeDestroy() {
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy();
+    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.box {
+  position: relative;
+  opacity: 1;
+}
 
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -350px;
+  opacity: 1;
+}
+
+h1 {
+  font-size: 66px;
+}
+
+p {
+  margin-top: 60px;
+  font-size: 18px;
+}
 </style>

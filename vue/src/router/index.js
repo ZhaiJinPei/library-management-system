@@ -95,9 +95,6 @@ const routes = [
         name: 'editBook',
         component: () => import('@/views/book/Edit')
       },
-
-
-
       // ===== borrow =====
       {
         path: 'buyList',
@@ -109,10 +106,6 @@ const routes = [
         name: 'addBuy',
         component: () => import('@/views/buy/Add')
       },
-
-
-
-
       // ===== borrow =====
       {
         path: 'borrowList',
@@ -129,7 +122,32 @@ const routes = [
         path: 'reternList',
         name: 'reternList',
         component: () => import('@/views/retern/List')
+      },
+      //==== swagger =====
+      {
+        path: 'swagger',
+        name: 'swagger',
+        component: () => import('@/views/api/Swagger')
+      },
+      //==== minio =====
+      {
+        path: 'zipkin',
+        name: 'zipkin',
+        component: () => import('@/views/trace/Zipkin')
+      },
+      //==== skywaling =====
+      {
+        path: "skywalking",
+        name: 'skywalking',
+        component: () => import('@/views/trace/SkyWalking')
+      },
+      //==== minio =====
+      {
+        path: 'minio',
+        name: 'minio',
+        component: () => import('@/views/oss/Minio')
       }
+
     ]
   },
   // ===== 404 =====

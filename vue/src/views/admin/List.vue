@@ -8,7 +8,7 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <el-table :data="tableData" stripe>
+    <el-table :data="tableData" stripe style="margin-left:3px;width: 99%">
       <!-- status switch -->
       <el-table-column label="Status" width="100">
         <template v-slot="scope2">
@@ -40,7 +40,7 @@
               title="Are you sure you want to delete this row of data？"
               @confirm="del(scope.row.email)"
           >
-            <el-button style="margin-left: 2px;" slot="reference" type="danger">Delete</el-button>
+            <el-button slot="reference" style="margin-left: 5px;" type="danger">Delete</el-button>
           </el-popconfirm>
           <!-- reset password -->
           <el-popconfirm
@@ -49,7 +49,7 @@
               title="Are you sure you want to reset this admin's password？"
               @confirm="resetPass(scope.row)"
           >
-            <el-button style="margin-left: 2px;" slot="reference" type="warning">Reset</el-button>
+            <el-button slot="reference" style="margin-left: 5px;" type="warning">Reset</el-button>
           </el-popconfirm>
         </template>
       </el-table-column>

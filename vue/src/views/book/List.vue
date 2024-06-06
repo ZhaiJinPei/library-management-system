@@ -9,7 +9,7 @@
     </div>
     <!-- table area -->
     <div>
-      <el-table :data="tableData" style="width: 100%" stripe>
+      <el-table :data="tableData" stripe style="margin-left: 3px;width: 99%">
         <el-table-column prop="isbn" label="ISBN" width="90"></el-table-column>
         <el-table-column prop="name" label="Name" show-overflow-tooltip width="120"></el-table-column>
         <el-table-column prop="category" label="Category" width="130"></el-table-column>

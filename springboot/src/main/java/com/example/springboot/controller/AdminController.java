@@ -6,11 +6,15 @@ import com.example.springboot.controller.request.LoginRequest;
 import com.example.springboot.controller.request.PasswordRequest;
 import com.example.springboot.entity.Admin;
 import com.example.springboot.service.IAdminService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api("系统管理员相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/admin")
@@ -19,6 +23,8 @@ public class AdminController {
     IAdminService adminService;
 
     @PostMapping("/login")
+    @ApiImplicitParam(name = "request", value = "登录请求")
+    @ApiOperation(value = "管理员登录", notes = "管理员登录")
     public Result login(@RequestBody LoginRequest request) {
         return Result.success(adminService.login(request));
     }

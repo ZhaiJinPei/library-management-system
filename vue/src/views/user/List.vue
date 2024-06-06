@@ -8,8 +8,8 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <div>
-      <el-table :data="tableData" style="width: 100%" stripe>
+    <div style="margin-right: 10px;border-radius: 3px">
+      <el-table :data="tableData" stripe style="width: 100% ;margin-left: 3px;">
         <el-table-column prop="status" label="Status" width="80">
           <template v-slot="scope2">
             <el-switch
@@ -43,7 +43,7 @@
                 title="Are you sure you want to delete this row of data？"
                 @confirm="del(scope.row.email)"
             >
-              <el-button style="margin-left: 2px;" slot="reference" type="danger">Delete</el-button>
+              <el-button slot="reference" style="margin-left: 0;margin-top: 5px" type="danger">Delete</el-button>
             </el-popconfirm>
           </template>
         </el-table-column>

@@ -10,7 +10,7 @@
     </div>
     <!-- table area -->
     <div>
-      <el-table :data="tableData" style="width: 100%" stripe>
+      <el-table :data="tableData" stripe style="margin-left: 3px;width: 99%">
         <el-table-column prop="uid" label="User ID" show-overflow-tooltip width="150"></el-table-column>
         <el-table-column prop="username" label="Username" show-overflow-tooltip width="120"></el-table-column>
         <el-table-column prop="phone" label="Phone" width="100"></el-table-column>

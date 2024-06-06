@@ -1,7 +1,9 @@
 package com.example.springboot.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class Admin extends Person {
     private String passwrd;

@@ -1,15 +1,17 @@
 <template>
   <div>
     <!-- header -->
-    <div style="height: 80px; line-height: 80px; background-color: white; width: 100%; margin-bottom: 2px; display: flex">
+    <div
+        style="height: 80px; line-height: 80px; background-color: white; width: 100%; margin-bottom: 2px; display: flex;border-bottom: 1px solid;border-radius: 3px;">
       <!-- logo and title -->
-      <div style="width: 1000px">
+      <div style="width: 1000px;">
         <img alt="" src="@/assets/logo.png"
              style="width: 50px; height: 50px; position: relative; top: 10px; left: 25px">
         <span style="margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
       </div>
       <!-- admins' info -->
       <div style="flex: 1; text-align: right; margin-right: 40px">
+        <i class="el-icon-full-screen" style="margin-right: 10px" @click="changeScreen"></i>
         <el-dropdown style="cursor: pointer">
           <span class="el-dropdown-link">
             Welcome {{ admin.username }}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -110,11 +112,37 @@
             </template>
             <el-menu-item index="/ReternList">Return Records</el-menu-item>
           </el-submenu>
+          <!-- api-doc -->
+          <el-submenu index="swagger">
+            <template slot="title">
+              <i class="el-icon-folder-opened"></i>
+              <span style="font-family: Arial,sans-serif; font-size: 15px;">Swagger API</span>
+            </template>
+            <el-menu-item index="/swagger">Knife4j 接口文档</el-menu-item>
+          </el-submenu>
+          <!-- zipkin -->
+          <el-submenu index="trace">
+            <template slot="title">
+              <i class="el-icon-aim"></i>
+              <span style="font-family: Arial,sans-serif; font-size: 15px;">链路追踪</span>
+            </template>
+            <el-menu-item index="/zipkin">Zipkin</el-menu-item>
+            <el-menu-item index="/skywalking">SkyWalking</el-menu-item>
+          </el-submenu>
+          <!-- minio -->
+          <el-submenu index="minio">
+            <template slot="title">
+              <i class="el-icon-coin"></i>
+              <span style="font-family: Arial,sans-serif; font-size: 15px;">OSS 对象存储</span>
+            </template>
+            <el-menu-item index="/minio">Minio 文件上传</el-menu-item>
+          </el-submenu>
         </el-menu>
       </div>
       <!-- main -->
-      <div style="flex: 1; background-color: white;">
-        <router-view/>
+      <div ref="vantaRef"
+           style="flex: 1;margin:0 ;background: url('http://localhost:9000/pp0alm-img/waves.gif') no-repeat;background-size: 100% 100%;background-attachment: fixed;">
+        <router-view v-if="isRouterAlive"/>
       </div>
     </div>
     <Footer></Footer>
@@ -126,16 +154,22 @@
 import Cookies from "js-cookie";
 import request from "@/utils/request";
 import Footer from "@/views/Footer";
+import ScreenFull from 'screenfull'
 
 export default {
   components: {Footer},
   name: "Layout",
+  provide() {
+    return {
+      reload: this.reload
+    }
+  },
   data() {
     const checkConfirm = (rule, value, callback) => {
       if(!value) {
         callback(new Error("Please enter new password again"))
       }
-      if(value != this.form.newPassword) {
+      if (value !== this.form.newPassword) {
         callback(new Error("Please enter the correct new password"))
       }
       callback()
@@ -146,7 +180,8 @@ export default {
       dialogFormVisible: false,
       formLabelWidth: '200px',
       form: {},
-
+      fullImg: false,
+      isRouterAlive: true,
       rules: {
         password: [{ required: true, message: "Original password cannot be empty", trigger: 'blur' }],
         newPassword: [
@@ -160,7 +195,25 @@ export default {
       }
     }
   },
-
+  // three渲染钩子
+  // mounted() {
+  //   this.vantaEffect = waves({
+  //     el: this.$refs.vantaRef,
+  //     THREE: THREE,
+  //     mouseControls: true,
+  //     touchControls: true,
+  //     gyroControls: false,
+  //     minHeight: 200.0,
+  //     minWidth: 200.0,
+  //     scale: 1.0,
+  //     color: 0x79797d
+  //   });
+  // },
+  // beforeDestroy() {
+  //   if (this.vantaEffect) {
+  //     this.vantaEffect.destroy();
+  //   }
+  // },
   methods: {
     logout() {
       // data removal is required
@@ -191,8 +244,24 @@ export default {
         }
       })
     },
-
-  }
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(function () {
+        this.isRouterAlive = true;
+      })
+    },
+    //   改变全屏
+    changeScreen() {
+      if (!ScreenFull.isEnabled) {
+        // 此时全屏不可用
+        this.$message.warning('此时全屏组件不可用')
+        return
+      }
+      // document.documentElement.requestFullscreen()  原生js调用
+      //   如果可用 就可以全屏
+      ScreenFull.toggle()
+    }
+  },
 }
 </script>
 

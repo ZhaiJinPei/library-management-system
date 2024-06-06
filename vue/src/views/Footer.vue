@@ -1,20 +1,17 @@
 <template>
   <div class='footer'>
-    <!--    <span class="scroll"></span>-->
-    <el-divider></el-divider>
-    <span @click="law = true">Apache License</span>
+    <span @click="law = true">Apache License 2.0</span>
     <el-divider direction="vertical"></el-divider>
-    <span @click="link = true">Links</span>
+    <span @click="link = true">Quick Links</span>
     <el-divider direction="vertical"></el-divider>
-    <span @click="drawer = true">Call Us</span>
+    <span @click="drawer = true">Call Us Please</span>
     <br/>
-    <br/>
-    <span class="copyright">Author:  ZhaiJinPei</span>
+    <span class="copyright">Author:  Zhai JinPei</span>
     <el-drawer
         :before-close="handleClose"
         :direction="rtl"
         :visible.sync="law"
-        title="Apache License">
+        title="The Apache License 2.0 Text Plain Preview">
       <p class='info'>
         <pre>
           <code>
@@ -233,6 +230,18 @@
         <a href="https://v2.cn.vuejs.org/v2/guide/installation.html" style="align-items: center">VUE2 Docs</a><br>
         <a href="https://element-plus.org/zh-CN/component/drawer.html" style="align-items: center">Element-ui
           VUE</a><br>
+        <a href="https://docs.docker.com/reference/cli/dockerd/" style="align-items: center">docker</a><br>
+        <a href="https://redis.io/docs/latest/" style="align-items: center">redis</a><br>
+        <a href="https://skywalking.apache.org/docs/main/latest/readme/" style="align-items: center">skywalking</a><br>
+        <a href="https://zipkin.io/" style="align-items: center">zipkin</a><br>
+        <a href="https://spring.io/guides" style="align-items: center">spring</a><br>
+        <a href="https://min.io/docs/minio/kubernetes/upstream/" style="align-items: center">minio</a><br>
+        <a href="https://swagger.io/specification/v2/" style="align-items: center">swagger</a><br>
+        <a href="https://tailwind.nodejs.cn/docs/installation" style="align-items: center">tailwindcss</a><br>
+        <a href="https://docs.npmjs.com/" style="align-items: center">npmjs</a><br>
+        <a href="https://element-plus.org/zh-CN/component/icon.html" style="align-items: center">element plus</a><br>
+        <a href="https://element-plus.org/zh-CN/guide/dark-mode.html" style="align-items: center">el-icon</a><br>
+        <a href="https://vueuse.org/core/useDark/" style="align-items: center">vueuse</a><br>
       </p>
     </el-drawer>
     <el-drawer
@@ -241,8 +250,10 @@
         :visible.sync="drawer"
         title="Call Us">
       <p class='info'>
+        <i class="el-icon-pear"></i>Zhai JinPei<br/>
         <i class="el-icon-phone"></i>Phone：+8613511704552<br/>
         <i class="el-icon-message"></i>Email：godj47552@gmail.com<br/>
+        <i class="el-icon-s-home"></i>https://github.com/ZhaiJinPei/<br/>
       </p>
     </el-drawer>
   </div>
@@ -254,9 +265,10 @@
 </style>
 <style scoped>
 .footer {
-  height: 150px;
+  height: 40px;
   text-align: center;
   font-size: 16px;
+  font-family: 'roboto mono', monospace, serif;
   padding: 0 10px;
   position: relative;
 }
@@ -287,67 +299,8 @@
   left: 5%;
   top: -25px;
   z-index: 10;
-  animation: scrollA infinite 20s linear alternate;
 }
 
-@keyframes scrollA {
-  0% {
-    left: 5%;
-    transform: rotate(180deg);
-  }
-  10% {
-    left: 5%;
-    transform: rotate(270deg);
-  }
-  20% {
-    left: 5%;
-    transform: rotate(450deg);
-  }
-  25% {
-    left: 10%;
-    transform: rotate(540deg);
-  }
-  30% {
-    left: 20%;
-    transform: rotate(720deg);
-  }
-  35% {
-    left: 30%;
-    transform: rotate(900deg);
-  }
-  40% {
-    left: 40%;
-    transform: rotate(1080deg);
-  }
-  45% {
-    left: 50%;
-    transform: rotate(1260deg);
-  }
-  50% {
-    left: 60%;
-    transform: rotate(1440deg);
-  }
-  55% {
-    left: 70%;
-    transform: rotate(1620deg);
-  }
-  60% {
-    left: 80%;
-    transform: rotate(1800deg);
-  }
-  80% {
-    left: 90%;
-    transform: rotate(2610deg);
-  }
-  90% {
-    left: 90%;
-    transform: rotate(2340deg);
-  }
-  100% {
-    left: 90%;
-    transform: rotate(2520deg);
-  }
-}
 </style>
 <script>
 export default {

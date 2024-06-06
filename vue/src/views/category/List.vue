@@ -7,7 +7,8 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <el-table :data="tableData" row-key="id" :tree-props="{children: 'children', hasChildren: 'hasChildren'}" stripe>
+    <el-table :data="tableData" :tree-props="{children: 'children', hasChildren: 'hasChildren'}" row-key="id"
+              stripe style="margin-left: 3px;width: 99%">
       <el-table-column prop="id" label="ID" width="100"></el-table-column>
       <el-table-column prop="name" label="Category Name" width="150"></el-table-column>
       <el-table-column prop="remark" label="Remark"></el-table-column>

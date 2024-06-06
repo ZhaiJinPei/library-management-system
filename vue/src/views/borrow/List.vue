@@ -9,7 +9,7 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <div>
+    <div style="margin-left: 3px;width: 99%">
       <el-table :data="tableData" style="width: 100%" stripe>
         <el-table-column prop="uid" label="User ID" show-overflow-tooltip width="150"></el-table-column>
         <el-table-column prop="username" label="Username" show-overflow-tooltip width="100"></el-table-column>

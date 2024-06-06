@@ -2,13 +2,29 @@ server:
   port: 9090
 
 spring:
+  application:
+    name: lms
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/pp0alm?serverTimezone=GMT-5&allowMultiQueries=true # allow multi queries
+    url: jdbc:mysql://127.0.0.1:3306/pp0alm?serverTimezone=GMT-5&allowMultiQueries=true # allow multi queries
     username: root
     password: 123456  # my password
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+    sender:
+      type: web
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
 
