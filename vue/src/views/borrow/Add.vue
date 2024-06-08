@@ -1,10 +1,19 @@
 <template>
   <div style="padding: 10px;">
-    <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Add New Borrow Record</div>
-    <div style=" width: 80%">
+    <div
+        style="width:99%;margin-left: 5px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Book Borrow 图书借阅</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>New Borrow Record 新增借阅记录</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+      Borrow Record 新增借阅记录
+    </div>
+    <div style=" width: 50%">
       <!-- form area -->
-      <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
-        <el-form-item label="ISBN: " style="margin-left: 2px" prop="isbn">
+      <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
+        <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">
           <el-select v-model="form.isbn" clearable filterable placeholder="Please select ISBN" @change="selectBook">
             <el-option
                 v-for="item in books"
@@ -14,13 +23,13 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="Book Name: " style="margin-left: 2px"  prop="name">
+        <el-form-item label="Book Name 书名: " prop="name" style="margin-left: 2px">
           <el-input v-model="form.name" placeholder="Enter book's name" disabled></el-input>
         </el-form-item>
-        <el-form-item id="credit" label="Need Credit: " style="margin-left: 2px;" prop="credit">
+        <el-form-item id="credit" label="Need Credit 所需信誉分: " prop="credit" style="margin-left: 2px;">
           <el-input v-model="form.credit" placeholder="Enter credit" disabled></el-input>
         </el-form-item>
-        <el-form-item id="number" label="Number: " style="margin-left: 2px;" prop="number">
+        <el-form-item id="number" label="Number 借阅数量: " prop="number" style="margin-left: 2px;">
           <el-input v-model="form.number" placeholder="Enter a number" disabled></el-input>
         </el-form-item>
         <el-form-item label="User ID: " style="margin-left: 2px" prop="uid">
@@ -33,16 +42,16 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="Phone: " style="margin-left: 2px" prop="phone">
+        <el-form-item label="Phone 电话号: " prop="phone" style="margin-left: 2px">
           <el-input v-model="form.phone" placeholder="Enter phone number" disabled></el-input>
         </el-form-item>
-        <el-form-item label="Username: " style="margin-left: 2px" prop="username">
+        <el-form-item label="Username 用户名: " prop="username" style="margin-left: 2px">
           <el-input v-model="form.username" placeholder="Enter username" disabled></el-input>
         </el-form-item>
-        <el-form-item label="Score Left: " style="margin-left: 2px" prop="acredit">
+        <el-form-item label="Score Left 用户剩余积分: " prop="acredit" style="margin-left: 2px">
           <el-input v-model="form.acredit" placeholder="Enter score value" disabled></el-input>
         </el-form-item>
-        <el-form-item label="Borrow Days: " style="margin-left: 2px" prop="duration">
+        <el-form-item label="Borrow Days 借阅天数: " prop="duration" style="margin-left: 2px">
           <template>
             <el-input-number v-model="form.duration" @change="handleChange" :min="1" :max="10"></el-input-number>
           </template>

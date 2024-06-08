@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <div style="padding: 10px">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>User 用户</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>User List 用户详情</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <!-- search area -->
     <div style="margin-bottom: 2px; margin-top: 2px">
       <el-input v-model="params.email" placeholder="Enter user email" style="width: 200px; margin-left: 2px"></el-input>
@@ -8,7 +15,7 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <div style="margin-right: 10px;border-radius: 3px">
+    <div style="margin-right: 10px;">
       <el-table :data="tableData" stripe style="width: 100% ;margin-left: 3px;">
         <el-table-column prop="status" label="Status" width="80">
           <template v-slot="scope2">
@@ -25,15 +32,15 @@
         <el-table-column prop="fname" label="First Name" width="100"></el-table-column>
         <el-table-column prop="lname" label="Last Name" width="100"></el-table-column>
         <el-table-column prop="age" label="Age" width="50"></el-table-column>
-        <el-table-column prop="email" label="Email" show-overflow-tooltip width="150"></el-table-column>
+        <el-table-column label="Email" prop="email" show-overflow-tooltip width="180"></el-table-column>
         <el-table-column prop="phone" label="Phone" width="110"></el-table-column>
-        <el-table-column prop="province" label="Province/State" width="95"></el-table-column>
+        <el-table-column label="Province/State" prop="province" width="90"></el-table-column>
         <el-table-column prop="city" label="City" show-overflow-tooltip width="80"></el-table-column>
         <el-table-column prop="street" label="Street" show-overflow-tooltip width="100"></el-table-column>
         <el-table-column prop="ctime" label="Create Date" width="120"></el-table-column>
         <el-table-column prop="utime" label="Update Date" width="120"></el-table-column>
-        <el-table-column prop="acredit" label="Score" width="70"></el-table-column>
-        <el-table-column fixed="right" label="Operations" width="265">
+        <el-table-column label="Score" prop="acredit" width=70></el-table-column>
+        <el-table-column fixed="right" label="Operations" width="200">
           <template v-slot="scope">
             <el-button type="success" @click="chargeOpen(scope.row)">Recharge</el-button>
             <el-button type="primary" style="margin-left: 2px;" @click="$router.push('/editUser?email=' + scope.row.email)">Edit</el-button>
@@ -50,7 +57,8 @@
       </el-table>
       <!-- charge up user account -->
       <el-dialog style="text-align: center" :visible.sync="dialogFormVisible">
-        <div style="font-size: 30px; font-family: Arial; font-weight: bold">Charge Up User's Account</div>
+        <div style="font-size: 30px; font-family: 'roboto mono', monospace;">Charge Up User's Account<br>充值账户积分
+        </div>
         <el-form :model="form" :rules="rules" ref="ruleForm" style="margin-top: 15px; width: 80vh;">
           <el-form-item label="User email: " :label-width="formLabelWidth" prop="name">
             <el-input v-model="form.email" disabled autocomplete="off"></el-input>
@@ -158,7 +166,7 @@ export default {
     },
 
     //encapsule() {
-    //  let url = 'http://localhost:9090/user/page'
+    //  let url = 'http://10.20.245.160:9090/user/page'
     //  let params = this.params
 //
     //  url = url + '?pageNum=' + params.pageNum

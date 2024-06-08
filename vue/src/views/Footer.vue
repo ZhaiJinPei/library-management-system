@@ -1,12 +1,12 @@
 <template>
-  <div class='footer'>
-    <span @click="law = true">Apache License 2.0</span>
+  <div class='footer' style="background: rgba(114,118,123,0.54)">
+    <span style="padding-right: 20px" @click="law = true">Apache License 2.0</span>
     <el-divider direction="vertical"></el-divider>
-    <span @click="link = true">Quick Links</span>
+    <span style="padding-left: 20px;padding-right: 20px" @click="link = true">Quick Links</span>
     <el-divider direction="vertical"></el-divider>
-    <span @click="drawer = true">Call Us Please</span>
+    <span style="padding-left: 20px" @click="drawer = true">Call Us Please</span>
     <br/>
-    <span class="copyright">Author:  Zhai JinPei</span>
+    <span class="copyright">Author:  Zhai JinPei group 15 2205221139 NJUIT</span>
     <el-drawer
         :before-close="handleClose"
         :direction="rtl"
@@ -242,6 +242,13 @@
         <a href="https://element-plus.org/zh-CN/component/icon.html" style="align-items: center">element plus</a><br>
         <a href="https://element-plus.org/zh-CN/guide/dark-mode.html" style="align-items: center">el-icon</a><br>
         <a href="https://vueuse.org/core/useDark/" style="align-items: center">vueuse</a><br>
+        <a href="https://echarts.apache.org/handbook/zh/get-started/" style="align-items: center">Echarts</a><br>
+        <a href="https://expressjs.com/" style="align-items: center">Express</a><br>
+        <a href="https://corejs-doc.netlify.app/zh/guide/" style="align-items: center">CoreJS</a><br>
+        <a href="https://momentjs.com/docs/" style="align-items: center">MomentJS</a><br>
+        <a href="https://doc.xiaominfo.com/" style="align-items: center">Knife4j</a><br>
+        <a href="https://nodejs.cn/en/learn" style="align-items: center">NodeJS Learn</a><br>
+        <a href="https://webpack.js.org/concepts/" style="align-items: center">Webpack</a><br>
       </p>
     </el-drawer>
     <el-drawer

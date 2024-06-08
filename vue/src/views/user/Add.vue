@@ -1,34 +1,43 @@
 <template>
   <div style="padding: 10px;">
-    <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Add New User</div>
-    <div style=" width: 60%">
+    <div
+        style="padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>User 用户</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>New User 新增用户</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-top: 10px; margin-bottom: 10px">Add New
+      User 新增用户
+    </div>
+    <div style=" width: 40%">
       <!-- form area -->
-      <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
-        <el-form-item label="First Name: " style="margin-left: 2px" prop="fname">
+      <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
+        <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
           <el-input v-model="form.fname" placeholder="Enter first name"></el-input>
         </el-form-item>
-        <el-form-item label="Middle: " style="margin-left: 2px" prop="minit">
+        <el-form-item label="Middle(Western) 教名: " prop="minit" style="margin-left: 2px">
           <el-input v-model="form.minit" placeholder="Enter middle"></el-input>
         </el-form-item>
-        <el-form-item label="Last Name: " style="margin-left: 2px" prop="lname">
+        <el-form-item label="Last Name 姓氏: " prop="lname" style="margin-left: 2px">
           <el-input v-model="form.lname" placeholder="Enter last name"></el-input>
         </el-form-item>
-        <el-form-item label="Email: " style="margin-left: 2px" prop="email">
+        <el-form-item label="Email 邮箱账号: " prop="email" style="margin-left: 2px">
           <el-input v-model="form.email" placeholder="Enter email"></el-input>
         </el-form-item>
-        <el-form-item label="User ID: " style="margin-left: 2px">
+        <el-form-item label="User ID 自动生成: " style="margin-left: 2px">
           <el-input v-model="form.uid" placeholder="--Generate after submission--" :disabled="true"></el-input>
         </el-form-item>
-        <el-form-item label="Username: " style="margin-left: 2px" prop="username">
+        <el-form-item label="Username 用户名: " prop="username" style="margin-left: 2px">
           <el-input v-model="form.username" placeholder="Enter username"></el-input>
         </el-form-item>
-        <el-form-item label="Phone: " style="margin-left: 2px" prop="phone">
+        <el-form-item label="Phone 电话号: " prop="phone" style="margin-left: 2px">
           <el-input v-model="form.phone" placeholder="Enter phone number"></el-input>
         </el-form-item>
-        <el-form-item label="Age: " style="margin-left: 2px" prop="age">
+        <el-form-item label="Age 年龄: " prop="age" style="margin-left: 2px">
           <el-input v-model="form.age" placeholder="Enter age"></el-input>
         </el-form-item>
-        <el-form-item label="Gender: " style="margin-left: 2px" prop="gender">
+        <el-form-item label="Gender 性别: " prop="gender" style="margin-left: 2px">
           <el-select v-model="form.gender" placeholder="Please select a gender">
             <el-option
                 v-for="item in options"
@@ -38,14 +47,14 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="Province/State: " style="margin-left: 2px" prop="province">
-          <el-input v-model="form.province" placeholder="Enter province/state"></el-input>
+        <el-form-item label="Province/State 省份/州名: " prop="province" style="margin-left: 2px">
+          <el-input v-model="form.province" placeholder="Enter province or state"></el-input>
         </el-form-item>
-        <el-form-item label="City: " style="margin-left: 2px" prop="city">
+        <el-form-item label="City 城市名: " prop="city" style="margin-left: 2px">
           <el-input v-model="form.city" placeholder="Enter city"></el-input>
         </el-form-item>
-        <el-form-item label="Street: " style="margin-left: 2px" prop="street">
-          <el-input v-model="form.street" placeholder="Enter street"></el-input>
+        <el-form-item label="Street/Road 街道名/路名: " prop="street" style="margin-left: 2px">
+          <el-input v-model="form.street" placeholder="Enter street or road"></el-input>
         </el-form-item>
       </el-form>
       <!-- button area -->
@@ -102,16 +111,16 @@ export default {
 
       options: [{
         value: 'Male',
-        label: 'Male'
+        label: 'Male 男'
       }, {
         value: 'Female',
-        label: 'Female'
+        label: 'Female 女'
       }, {
         value: 'Other',
-        label: 'Other'
+        label: 'Other 其他'
       }, {
         value: 'Unknown',
-        label: 'Prefer not disclose'
+        label: 'Prefer not disclose 未知'
       }],
 
       // rules to check the input values

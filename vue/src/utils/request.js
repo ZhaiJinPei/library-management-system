@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-    baseURL: 'http://127.0.0.1:9090',
+    baseURL: 'http://10.20.245.160:9090',
     timeout: 5000
 })
 

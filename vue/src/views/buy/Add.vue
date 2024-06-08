@@ -1,10 +1,19 @@
 <template>
   <div style="padding: 10px;">
-    <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Add New Buy Record</div>
-    <div style=" width: 80%">
+    <div
+        style="width:99%;margin-left: 5px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>New Buy Record 新增购买记录</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+      Buy Record 新增购买记录
+    </div>
+    <div style=" width: 50%">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
-        <el-form-item label="ISBN: " style="margin-left: 2px" prop="isbn">
+        <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">
           <el-select v-model="form.isbn" clearable filterable placeholder="Please select ISBN" @change="selectBook">
             <el-option
                 v-for="item in books"
@@ -14,7 +23,7 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="Book Name: " style="margin-left: 2px"  prop="name">
+        <el-form-item label="Book Name 书名: " prop="name" style="margin-left: 2px">
           <el-input v-model="form.name" placeholder="Enter book's name" disabled></el-input>
         </el-form-item>
 
@@ -30,17 +39,17 @@
           </el-select>
         </el-form-item>
 
-        <el-form-item label="Username: " style="margin-left: 2px" prop="username">
+        <el-form-item label="Username 用户名: " prop="username" style="margin-left: 2px">
           <el-input v-model="form.username" placeholder="Enter username" disabled></el-input>
         </el-form-item>
 
-        <el-form-item label="Buy Number: " style="margin-left: 2px" prop="duration">
+        <el-form-item label="Buy Number 购买数量: " prop="duration" style="margin-left: 2px">
           <template>
             <el-input-number v-model="form.count" @change="handleChange" :min="1" :max="10000"></el-input-number>
           </template>
         </el-form-item>
 
-        <el-form-item label="Unit Price: " style="margin-left: 2px" prop="duration">
+        <el-form-item label="Unit Price 单件价格: " prop="duration" style="margin-left: 2px">
           <template>
             <el-input-number v-model="form.price" @change="handleChange" :min="1" :max="10000"></el-input-number>
           </template>

@@ -1,7 +1,16 @@
 <template>
   <div style="padding: 10px;">
-    <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Edit Book</div>
-    <div style="width: 60%">
+    <div
+        style="width:99%;margin-left: 5px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Edit Book 编辑图书</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit Book
+      编辑图书
+    </div>
+    <div style="width: 50%">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="ISBN: " style="margin-left: 2px" prop="isbn">

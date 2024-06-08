@@ -80,7 +80,7 @@ public class ReternSerice implements IReternService {
         // return some credit if the book is returned before the due date
         User user = userMapper.getByEmail(email);
         LocalDateTime now = LocalDateTime.now();
-        Integer returnCredit = 0;
+        Integer returnCredit;
         long realDuration = borrow.getCDate().until(now, ChronoUnit.DAYS);
         if(realDuration == 0) { // return on the same date of create date
             user.setACredit(user.getACredit() + book.getCredit());

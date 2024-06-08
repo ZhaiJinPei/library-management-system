@@ -2,18 +2,36 @@
   <div>
     <!-- header -->
     <div
-        style="height: 80px; line-height: 80px; background-color: white; width: 100%; margin-bottom: 2px; display: flex;border-bottom: 1px solid;border-radius: 3px;">
+        ref="theme6" v-model="themec"
+        style="color: black;height: 80px; line-height: 80px; background: white; width: 100%; margin-bottom: 1px; display: flex;border-bottom: 1px solid;border-bottom-color: black">
       <!-- logo and title -->
-      <div style="width: 1000px;">
-        <img alt="" src="@/assets/logo.png"
-             style="width: 50px; height: 50px; position: relative; top: 10px; left: 25px">
-        <span style="margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
+      <div ref="theme1" v-model="themec" style="width: 1000px;background: #fff9f9">
+        <img ref="theme2" v-model="themec" alt="" src="@/assets/logo.png"
+             style="background: #fff9f9;width: 50px; height: 50px; position: relative; top: 10px; left: 25px">
+        <span ref="theme3" v-model="themec"
+              style="background-color: #fff9f9; margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
       </div>
       <!-- admins' info -->
-      <div style="flex: 1; text-align: right; margin-right: 40px">
-        <i class="el-icon-full-screen" style="margin-right: 10px" @click="changeScreen"></i>
-        <el-dropdown style="cursor: pointer">
-          <span class="el-dropdown-link">
+      <div ref="theme5" v-model="themec"
+           style="color: black;flex: 1; text-align: right; margin-right: 40px;background: #fff9f9">
+        <i class="el-icon-full-screen" style="font-size: 20px;" @click="changeScreen"></i>
+        <div style="display: inline;margin-left: 10px;padding:20px;">
+          <el-switch
+              v-model="theme"
+              active-color="#409eff"
+              active-icon-class="el-icon-monn"
+              inactive-color="#c0ccda"
+              inactive-icon-class="el-icon-sunny"
+              inline-prompt
+              name="theme"
+              style="padding-bottom:5px;"
+              width="50"
+              @change='changeTheme'
+          />
+        </div>
+        <el-dropdown style="cursor: pointer;">
+          <span ref="theme7" v-model="themec"
+                class="el-dropdown-link" style="color: #001a1c;font-family: 'roboto mono', monospace;font-size: 20px ">
             Welcome {{ admin.username }}<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <!-- dropdown -->
@@ -44,79 +62,79 @@
         </el-dialog>
       </div>
     </div>
+
+
     <!-- side and main -->
     <div style="display: flex">
       <!-- side -->
-      <div style="min-width: 230px; min-height: calc(100vh - 82px); height: 200px; overflow: hidden; margin-right: 2px;
-      background-color: white;">
-        <el-menu :unique-opened="true" :default-active="$route.path" :default-opens="['user']" router>
+      <div ref="theme4" v-model="themec"
+           style="min-width: 250px; min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
+        <el-menu :default-active="$route.path" :default-opens="['user']"
+                 :unique-opened="true" router style="font-family: 'roboto mono', monospace;background: #cfd7dc">
           <el-menu-item index="/home">
             <i class="el-icon-s-data"></i>
-            <span style="font-family: Arial; font-size: 15px;">Homepage</span>
+            <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Homepage 系统主页</span>
           </el-menu-item>
           <!-- users -->
           <el-submenu index="user">
             <template slot="title">
               <i class="el-icon-user"></i>
-              <span style="font-family: Arial; font-size: 15px;">Users</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Users 用户</span>
             </template>
-            <el-menu-item index="/addUser">New User</el-menu-item>
-            <el-menu-item index="/userList">User List</el-menu-item>
+            <el-menu-item index="/addUser">New User 新增用户</el-menu-item>
+            <el-menu-item index="/userList">User List 用户详情</el-menu-item>
           </el-submenu>
           <!-- admins -->
           <el-submenu index="admin">
             <template slot="title">
               <i class="el-icon-user-solid"></i>
-              <span style="font-family: Arial; font-size: 15px;">Administrators</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Administrators 管理员</span>
             </template>
-            <el-menu-item index="/addAdmin">New Admin</el-menu-item>
-            <el-menu-item index="/adminList">Admin List</el-menu-item>
+            <el-menu-item index="/addAdmin">New Admin 新增管理员</el-menu-item>
+            <el-menu-item index="/adminList">Admin List 管理员详情</el-menu-item>
           </el-submenu>
           <!-- category -->
           <el-submenu index="category">
             <template slot="title">
               <i class="el-icon-s-fold"></i>
-              <span style="font-family: Arial; font-size: 15px;">Categories</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Categories 图书类型</span>
             </template>
-            <el-menu-item index="/addCategory">New Parent Category</el-menu-item>
-            <el-menu-item index="/categoryList">Category List</el-menu-item>
+            <el-menu-item index="/addCategory">New Parent Category 新增类型</el-menu-item>
+            <el-menu-item index="/categoryList">Category List 类型详情</el-menu-item>
           </el-submenu>
           <!-- book -->
           <el-submenu index="book">
             <template slot="title">
               <i class="el-icon-collection"></i>
-              <span style="font-family: Arial; font-size: 15px;">Books</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Books 图书</span>
             </template>
-            <el-menu-item index="/addBook">Add New Book</el-menu-item>
-            <el-menu-item index="/BookList">Book List</el-menu-item>
-
-            <el-menu-item index="/addBuy">New Buy Record</el-menu-item>
-            <el-menu-item index="/BuyList">Buy Records</el-menu-item>
-
-
+            <el-menu-item index="/addBook">Add New Book 新增图书</el-menu-item>
+            <el-menu-item index="/BookList">Book List 图书详情</el-menu-item>
+            <el-menu-item index="/addBuy">New Buy Record 新增购买记录</el-menu-item>
+            <el-menu-item index="/BuyList">Buy Records 购买记录</el-menu-item>
           </el-submenu>
           <!-- borrow -->
           <el-submenu index="borrow">
             <template slot="title">
               <i class="el-icon-download"></i>
-            <span style="font-family: Arial; font-size: 15px;">Book Borrow</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Book Borrow 图书借阅</span>
           </template>
-          <el-menu-item index="/addBorrow">New Borrow Record</el-menu-item>
-          <el-menu-item index="/BorrowList">Borrow Records</el-menu-item>
+            <el-menu-item index="/addBorrow">New Borrow Record 新增借阅记录</el-menu-item>
+            <el-menu-item index="/BorrowList">Borrow Records 借阅记录</el-menu-item>
           </el-submenu>
           <!-- return -->
           <el-submenu index="retern">
             <template slot="title">
               <i class="el-icon-upload2"></i>
-              <span style="font-family: Arial; font-size: 15px;">Book Return</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Book Return 图书归还</span>
             </template>
-            <el-menu-item index="/ReternList">Return Records</el-menu-item>
+            <el-menu-item index="/ReternList">Return Records 归还记录</el-menu-item>
           </el-submenu>
           <!-- api-doc -->
           <el-submenu index="swagger">
             <template slot="title">
               <i class="el-icon-folder-opened"></i>
-              <span style="font-family: Arial,sans-serif; font-size: 15px;">Swagger API</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Swagger 接口 API</span>
             </template>
             <el-menu-item index="/swagger">Knife4j 接口文档</el-menu-item>
           </el-submenu>
@@ -124,16 +142,16 @@
           <el-submenu index="trace">
             <template slot="title">
               <i class="el-icon-aim"></i>
-              <span style="font-family: Arial,sans-serif; font-size: 15px;">链路追踪</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Trace 链路追踪</span>
             </template>
             <el-menu-item index="/zipkin">Zipkin</el-menu-item>
-            <el-menu-item index="/skywalking">SkyWalking</el-menu-item>
+            <el-menu-item index="/skywalking">Apache SkyWalking</el-menu-item>
           </el-submenu>
           <!-- minio -->
           <el-submenu index="minio">
             <template slot="title">
               <i class="el-icon-coin"></i>
-              <span style="font-family: Arial,sans-serif; font-size: 15px;">OSS 对象存储</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">OSS 本地对象存储</span>
             </template>
             <el-menu-item index="/minio">Minio 文件上传</el-menu-item>
           </el-submenu>
@@ -141,7 +159,7 @@
       </div>
       <!-- main -->
       <div ref="vantaRef"
-           style="flex: 1;margin:0 ;background: url('http://localhost:9000/pp0alm-img/waves.gif') no-repeat;background-size: 100% 100%;background-attachment: fixed;">
+           style="flex: 1;margin:0 ;background: url('http://10.20.245.160:9000/pp0alm-img/waves.gif') no-repeat;background-size: 100% 100%;background-attachment: fixed;">
         <router-view v-if="isRouterAlive"/>
       </div>
     </div>
@@ -182,6 +200,8 @@ export default {
       form: {},
       fullImg: false,
       isRouterAlive: true,
+      theme: false,
+      themec: false,
       rules: {
         password: [{ required: true, message: "Original password cannot be empty", trigger: 'blur' }],
         newPassword: [
@@ -195,25 +215,6 @@ export default {
       }
     }
   },
-  // three渲染钩子
-  // mounted() {
-  //   this.vantaEffect = waves({
-  //     el: this.$refs.vantaRef,
-  //     THREE: THREE,
-  //     mouseControls: true,
-  //     touchControls: true,
-  //     gyroControls: false,
-  //     minHeight: 200.0,
-  //     minWidth: 200.0,
-  //     scale: 1.0,
-  //     color: 0x79797d
-  //   });
-  // },
-  // beforeDestroy() {
-  //   if (this.vantaEffect) {
-  //     this.vantaEffect.destroy();
-  //   }
-  // },
   methods: {
     logout() {
       // data removal is required
@@ -257,9 +258,42 @@ export default {
         this.$message.warning('此时全屏组件不可用')
         return
       }
-      // document.documentElement.requestFullscreen()  原生js调用
-      //   如果可用 就可以全屏
       ScreenFull.toggle()
+    },
+    changeTheme() {
+      var current1 = this.$refs["theme1"]
+      var current2 = this.$refs["theme2"]
+      var current3 = this.$refs["theme3"]
+      var current4 = this.$refs["theme4"]
+      var current5 = this.$refs["theme5"]
+      var current6 = this.$refs["theme6"]
+      var current7 = this.$refs["theme7"]
+      if (this.themec === false) {
+        this.themec = true
+        current1.style.background = "#56575c"
+        current2.style.background = "#56575c"
+        current3.style.background = "#56575c"
+        current4.style.background = "#56575c"
+        current5.style.background = "#56575c"
+        current5.style.color = "#ffffff"
+        current6.style.background = "#56575c"
+        current6.style.color = "#fff9f9"
+        current6.style.borderBottomColor = "#1861fd"
+        current7.style.color = "#fff9f9"
+      } else {
+        this.themec = false
+        current1.style.background = "#fff9f9"
+        current2.style.background = "#fff9f9"
+        current3.style.background = "#fff9f9"
+        current4.style.background = "#fff9f9"
+        current5.style.background = "#fff9f9"
+        current5.style.color = "#1b0e15"
+        current6.style.background = "#fff9f9"
+        current6.style.color = "#1b0e15"
+        current6.style.borderBottomColor = "#1b0e15"
+        current7.style.color = "#13ceda"
+      }
+
     }
   },
 }

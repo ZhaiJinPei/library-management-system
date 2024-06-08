@@ -16,7 +16,8 @@
             <el-input placeholder="Enter email" prefix-icon="el-icon-user" v-model="admin.email"></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input placeholder="Enter password" show-password prefix-icon="el-icon-lock" v-model="admin.password"></el-input>
+            <el-input v-model="admin.password" placeholder="Enter password 管理员默认密码 000000" prefix-icon="el-icon-lock"
+                      show-password></el-input>
           </el-form-item>
         </el-form>
       </div>
@@ -36,8 +37,7 @@
 
 import request from "@/utils/request";
 import Cookies from "js-cookie"
-
-import waves from "vanta/src/vanta.waves";
+import net from "vanta/src/vanta.net";
 import * as THREE from "three";
 
 export default {
@@ -73,7 +73,7 @@ export default {
     }
   },
   mounted() {
-    this.vantaEffect = waves({
+    this.vantaEffect = net({
       el: this.$refs.vantaRef,
       THREE: THREE,
       mouseControls: true,
@@ -82,6 +82,11 @@ export default {
       minHeight: 200.0,
       minWidth: 200.0,
       scale: 1.0,
+      scaleMobile: 1.00,
+      color: 0xa40a4,
+      backgroundColor: 0xf0f1e,
+      points: 11.00,
+      maxDistance: 25.00
     });
   },
   beforeDestroy() {

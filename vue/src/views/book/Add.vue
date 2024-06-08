@@ -1,31 +1,40 @@
 <template>
   <div style="padding: 10px;">
-    <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Add New Book</div>
-    <div style="width: 60%">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Add New Book 新增图书 </strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div style="font-size: 40px;font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+      Book 新增图书
+    </div>
+    <div style="width: 50%">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
-        <el-form-item label="ISBN: " style="margin-left: 2px" prop="isbn">
+        <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">
           <el-input v-model="form.isbn" placeholder="Enter isbn"></el-input>
         </el-form-item>
-        <el-form-item label="Description: " style="margin-left: 2px;" prop="description">
+        <el-form-item label="Description 描述: " prop="description" style="margin-left: 2px;">
           <el-input style="width: 500px" type="textarea" v-model="form.description" placeholder="Enter description"></el-input>
         </el-form-item>
-        <el-form-item label="Name: " style="margin-left: 2px" prop="name">
+        <el-form-item label="Name 书名: " prop="name" style="margin-left: 2px">
           <el-input v-model="form.name" placeholder="Enter name"></el-input>
         </el-form-item>
-        <el-form-item label="Category: " style="margin-left: 2px">
+        <el-form-item label="Category 类型: " style="margin-left: 2px">
           <el-cascader
               :props="{value: 'name', label: 'name'}"
               v-model="form.categories"
               :options="categories"></el-cascader>
         </el-form-item>
-        <el-form-item label="Author: " style="margin-left: 2px" prop="author">
+        <el-form-item label="Author 著者: " prop="author" style="margin-left: 2px">
           <el-input v-model="form.author" placeholder="Enter last name"></el-input>
         </el-form-item>
-        <el-form-item label="Publisher: " style="margin-left: 2px" prop="publisher">
+        <el-form-item label="Publisher 出版商: " prop="publisher" style="margin-left: 2px">
           <el-input v-model="form.publisher" placeholder="Enter publisher name"></el-input>
         </el-form-item>
-        <el-form-item label="Publish Date: " style="margin-left: 2px" prop="publish_date">
+        <el-form-item label="Publish Date 出版日期: " prop="publish_date" style="margin-left: 2px">
           <el-date-picker
               v-model="form.publish_date"
               type="date"
@@ -33,13 +42,13 @@
               placeholder="Select a date">
           </el-date-picker>
         </el-form-item>
-        <el-form-item id="credit" label="Score: " style="margin-left: 2px;" prop="credit">
+        <el-form-item id="credit" label="Score 积分点: " prop="credit" style="margin-left: 2px;">
           <el-input v-model="form.credit" placeholder="Enter score value"></el-input>
         </el-form-item>
-        <el-form-item id="cover" label="Cover url: " style="margin-left: 2px;" prop="cover">
+        <el-form-item id="cover" label="Cover url 封面链接: " prop="cover" style="margin-left: 2px;">
           <el-input v-model="form.cover" placeholder="Enter cover url"></el-input>
         </el-form-item>
-        <el-form-item id="number" label="Number: " style="margin-left: 2px;" prop="number">
+        <el-form-item id="number" label="Number 存量: " prop="number" style="margin-left: 2px;">
           <el-input v-model="form.number" placeholder="Enter number"></el-input>
         </el-form-item>
       </el-form>

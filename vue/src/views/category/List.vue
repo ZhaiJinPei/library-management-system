@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <div style="padding: 10px">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Categories 图书类型</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Category List 类型详情</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <!-- search area -->
     <div style="margin-bottom: 2px; margin-top: 2px">
       <el-input v-model="params.name" placeholder="Enter category" style="width: 200px; margin-left: 2px"></el-input>

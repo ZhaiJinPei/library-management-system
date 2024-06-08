@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <div style="padding: 10px">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Book Borrow 图书借阅</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Borrow Records 借阅记录</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <!-- search area -->
     <div style="margin-bottom: 2px; margin-top: 2px">
       <el-input v-model="params.username" placeholder="Enter username" style="width: 200px; margin-left: 2px"></el-input>

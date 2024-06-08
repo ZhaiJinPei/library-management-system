@@ -1,15 +1,24 @@
 <template>
   <div style="padding: 10px;">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Categories 图书类型</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Edit Parent Category 编辑父类型</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <div>
-      <div style="font-size: 40px; font-family: Arial; margin-bottom: 5px">Edit Parent Category</div>
+      <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit
+        Parent Category 编辑父类型
+      </div>
     </div>
 
-    <div style="width: 60%; margin-top: 2px">
-      <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
+    <div style="width: 60%; margin-top: 10px">
+      <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
         <el-form-item label="Category Name: " style="margin-left: 2px" prop="name">
           <el-input v-model="form.name" placeholder="Enter name"></el-input>
         </el-form-item>
-        <el-form-item label="Remark: " style="margin-left: 2px" prop="remark">
+        <el-form-item label="Remark 标识: " prop="remark" style="margin-left: 2px">
           <el-input v-model="form.remark" placeholder="Enter remark"></el-input>
         </el-form-item>
       </el-form>

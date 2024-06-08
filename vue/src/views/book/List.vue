@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <div style="padding: 10px">
+    <div
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Book List 图书详情</strong></em></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <!-- search area -->
     <div style="margin-bottom: 2px; margin-top: 2px">
       <el-input v-model="params.name" placeholder="Enter book's name" style="width: 200px; margin-left: 2px"></el-input>
@@ -22,7 +29,7 @@
         <el-table-column prop="cover" label="Cover" width="100">
           <template v-slot="scope1">
             <div v-viewer.static="{movable:false,title:false}" class="cover-viewer">
-              <el-image :src="scope1.row.cover" style="width: 50%; height: 50%"></el-image>
+              <el-image :src="scope1.row.cover" style="width: 50%; height: 50%;"></el-image>
             </div>
           </template>
         </el-table-column>
@@ -56,8 +63,22 @@
   </div>
 </template>
 <style>
-.cover-viewer:hover {
+.cover-viewer {
   opacity: 0.5;
+}
+
+.cover-viewer::after {
+  content: "点击查看图片,可调整";
+  position: relative;
+  display: none;
+  top: 100%;
+  padding: 5px;
+  left: 0;
+  color: #060615;
+}
+
+.cover-viewer:hover::after {
+  display: block;
 }
 </style>
 <script>
