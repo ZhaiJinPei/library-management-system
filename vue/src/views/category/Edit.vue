@@ -4,12 +4,12 @@
         style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Categories 图书类型</strong></em></el-breadcrumb-item>
-        <el-breadcrumb-item>&ensp;<em><strong>Edit Parent Category 编辑父类型</strong></em></el-breadcrumb-item>
+        <el-breadcrumb-item>&ensp;<em><strong>Edit Category 编辑类型信息</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div>
       <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit
-        Parent Category 编辑父类型
+        Edit Category 编辑类型信息
       </div>
     </div>
 

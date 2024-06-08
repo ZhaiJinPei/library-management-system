@@ -3,6 +3,8 @@
 
 -javaagent:F:\skywalking-agent\skywalking-agent.jar=agent.service_name=skywalking-demo,collector.backend_service=127.0.0.1:11800
 
+https://v2.cn.vuejs.org/v2/guide/installation.html
+https://element-plus.org/zh-CN/component/drawer.html
 https://docs.docker.com/reference/cli/dockerd/
 https://redis.io/docs/latest/
 https://skywalking.apache.org/docs/main/latest/readme/
@@ -15,3 +17,10 @@ https://docs.npmjs.com/
 https://element-plus.org/zh-CN/component/icon.html
 https://element-plus.org/zh-CN/guide/dark-mode.html
 https://vueuse.org/core/useDark/
+https://echarts.apache.org/handbook/zh/get-started/
+https://expressjs.com/
+https://corejs-doc.netlify.app/zh/guide/
+https://momentjs.com/docs/
+https://doc.xiaominfo.com/
+https://nodejs.cn/en/learn
+https://webpack.js.org/concepts/
