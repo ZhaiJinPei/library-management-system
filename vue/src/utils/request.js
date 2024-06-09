@@ -5,26 +5,27 @@ const request = axios.create({
     timeout: 5000
 })
 
-request.interceptors.request.use(config => {
+request.interceptors.request.use(
+    config => {
     config.headers['Content-Type'] = 'application/json;charset=utf-8';
-
-    //const admin = Cookies.get('admin');
-    //if(!admin) {
-    //    router.push('/login')
-    //}
-
     return config
-}, error => {
+    },
+    error => {
     return Promise.reject(error)
 });
 
 request.interceptors.response.use(
+    // config => {
+    //     config.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    //     return config
+    // },
     response => {
         let res = response.data;
         if (typeof res === 'string') {
             res = res ? JSON.parse(res) : res
         }
-        return res;
+        return res
+
     },
     error => {
         console.log('err' + error) // for debug

@@ -68,94 +68,174 @@
     <div style="display: flex">
       <!-- side -->
       <div ref="theme4" v-model="themec"
-           style="min-width: 250px; min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
-        <el-menu :default-active="$route.path" :default-opens="['user']"
-                 :unique-opened="true" router style="font-family: 'roboto mono', monospace;background: #cfd7dc">
+           style="min-width: 250px; max-width: 500px;min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
+        <el-menu
+            :default-active="$route.path"
+            :default-opens="['user']"
+            :unique-opened="true"
+            router
+            style="font-family: 'roboto mono', monospace;background: #cfd7dc"
+        >
           <el-menu-item index="/home">
             <i class="el-icon-s-data"></i>
-            <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Homepage 系统主页</span>
+            <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Homepage 系统主页</span>
           </el-menu-item>
           <!-- users -->
           <el-submenu index="user">
             <template slot="title">
               <i class="el-icon-user"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Users 用户</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Users 用户</span>
             </template>
-            <el-menu-item index="/addUser">New User 新增用户</el-menu-item>
-            <el-menu-item index="/userList">User List 用户详情</el-menu-item>
+            <el-menu-item index="/addUser">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;New User 新增用户
+            </el-menu-item>
+            <el-menu-item index="/userList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;User List 用户详情
+            </el-menu-item>
           </el-submenu>
           <!-- admins -->
           <el-submenu index="admin">
             <template slot="title">
               <i class="el-icon-user-solid"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Administrators 管理员</span>
+              <span
+                  style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Administrators 管理员</span>
             </template>
-            <el-menu-item index="/addAdmin">New Admin 新增管理员</el-menu-item>
-            <el-menu-item index="/adminList">Admin List 管理员详情</el-menu-item>
+            <el-menu-item index="/addAdmin">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;New Admin 新增管理员
+            </el-menu-item>
+            <el-menu-item index="/adminList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Admin List 管理员详情
+            </el-menu-item>
           </el-submenu>
           <!-- category -->
           <el-submenu index="category">
             <template slot="title">
               <i class="el-icon-s-fold"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Categories 图书类型</span>
+              <span
+                  style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Categories 图书类型</span>
             </template>
-            <el-menu-item index="/addCategory">New Parent Category 新增类型</el-menu-item>
-            <el-menu-item index="/categoryList">Category List 类型详情</el-menu-item>
+            <el-menu-item index="/addCategory">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;New Parent Category 新增类型
+            </el-menu-item>
+            <el-menu-item index="/categoryList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Category List 类型详情
+            </el-menu-item>
           </el-submenu>
           <!-- book -->
           <el-submenu index="book">
             <template slot="title">
               <i class="el-icon-collection"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Books 图书</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Books 图书</span>
             </template>
-            <el-menu-item index="/addBook">Add New Book 新增图书</el-menu-item>
-            <el-menu-item index="/BookList">Book List 图书详情</el-menu-item>
-            <el-menu-item index="/addBuy">New Buy Record 新增购买记录</el-menu-item>
-            <el-menu-item index="/BuyList">Buy Records 购买记录</el-menu-item>
+            <el-menu-item index="/addBook">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Add New Book 新增图书
+            </el-menu-item>
+            <el-menu-item index="/BookList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Book List 图书详情
+            </el-menu-item>
+            <el-menu-item index="/addBuy">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;New Buy Record 新增购买记录
+            </el-menu-item>
+            <el-menu-item index="/BuyList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Buy Records 购买记录
+            </el-menu-item>
           </el-submenu>
           <!-- borrow -->
           <el-submenu index="borrow">
             <template slot="title">
               <i class="el-icon-download"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Book Borrow 图书借阅</span>
+              <span
+                  style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Book Borrow 图书借阅</span>
           </template>
-            <el-menu-item index="/addBorrow">New Borrow Record 新增借阅记录</el-menu-item>
-            <el-menu-item index="/BorrowList">Borrow Records 借阅记录</el-menu-item>
+            <el-menu-item index="/addBorrow">
+              <i class="el-icon-add-location" style="margin-left:-20px"></i>
+              &emsp;&emsp;&emsp;&emsp;New Borrow Record 新增借阅记录
+            </el-menu-item>
+            <el-menu-item index="/BorrowList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Borrow Records 借阅记录
+            </el-menu-item>
           </el-submenu>
           <!-- return -->
           <el-submenu index="retern">
             <template slot="title">
               <i class="el-icon-upload2"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Book Return 图书归还</span>
+              <span
+                  style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Book Return 图书归还</span>
             </template>
-            <el-menu-item index="/ReternList">Return Records 归还记录</el-menu-item>
+            <el-menu-item index="/ReternList">
+              <i class="el-icon-s-operation" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Return Records 归还记录
+            </el-menu-item>
           </el-submenu>
           <!-- api-doc -->
           <el-submenu index="swagger">
             <template slot="title">
               <i class="el-icon-folder-opened"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Swagger 接口 API</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Swagger2 接口 API</span>
             </template>
-            <el-menu-item index="/swagger">Knife4j 接口文档</el-menu-item>
+            <el-menu-item index="/swagger">
+              <i class="el-icon-notebook-1" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Knife4j 接口文档
+            </el-menu-item>
           </el-submenu>
           <!-- zipkin -->
           <el-submenu index="trace">
             <template slot="title">
               <i class="el-icon-aim"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">Trace 链路追踪</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;Trace 链路追踪</span>
             </template>
-            <el-menu-item index="/zipkin">Zipkin</el-menu-item>
-            <el-menu-item index="/skywalking">Apache SkyWalking</el-menu-item>
+            <el-menu-item index="/zipkin">
+              <i class="el-icon-monitor" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Zipkin
+            </el-menu-item>
+            <el-menu-item index="/skywalking">
+              <i class="el-icon-data-analysis" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Apache SkyWalking
+            </el-menu-item>
           </el-submenu>
           <!-- minio -->
           <el-submenu index="minio">
             <template slot="title">
               <i class="el-icon-coin"></i>
-              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">OSS 本地对象存储</span>
+              <span style="font-family: 'roboto mono', monospace; font-size: 15px;">&emsp;&emsp;OSS 文件上传</span>
             </template>
-            <el-menu-item index="/minio">Minio 文件上传</el-menu-item>
+            <el-menu-item index="/minio">
+              <i class="el-icon-upload" style="margin-left: -20px"></i>
+              &emsp;&emsp;&emsp;&emsp;Minio 文件上传
+            </el-menu-item>
           </el-submenu>
         </el-menu>
+        <i ref="col"
+           :collapse="isCollapse"
+           class="el-icon-s-fold"
+           style="font-size: 32px;margin-left: 15px;margin-top: 10px" @click="onCollapse"></i>
+
+        <!--            <el-menu-->
+        <!--                :default-active="$route.path"-->
+        <!--                :default-opens="['user']"-->
+        <!--                :unique-opened="true"-->
+        <!--                ref="menub"-->
+        <!--                router-->
+        <!--                style="position: fixed;bottom: 18px;min-width:63px;max-width:63px;font-family: 'roboto mono', monospace;background: #cfd7dc"-->
+        <!--            >-->
+        <!--              <el-menu-item index="/github">-->
+        <!--                <i class="el-icon-share"></i>-->
+        <!--                &emsp;&emsp;&emsp;&emsp;Project Code-->
+        <!--              </el-menu-item>-->
+        <!--            </el-menu>-->
+
+
       </div>
       <!-- main -->
       <div ref="vantaRef"
@@ -202,6 +282,7 @@ export default {
       isRouterAlive: true,
       theme: false,
       themec: false,
+      isCollapse: false,
       rules: {
         password: [{ required: true, message: "Original password cannot be empty", trigger: 'blur' }],
         newPassword: [
@@ -293,8 +374,27 @@ export default {
         current6.style.borderBottomColor = "#1b0e15"
         current7.style.color = "#13ceda"
       }
-
-    }
+    },
+    onCollapse() {
+      var c = this.$refs['theme4']
+      var col = this.$refs['col']
+      var menub = this.$refs['menub']
+      if (this.isCollapse === false) {
+        this.isCollapse = true;
+        c.style.minWidth = '65px'
+        c.style.maxWidth = '65px'
+        col.className = 'el-icon-s-unfold'
+        menub.style.minWidth = '50px'
+        menub.style.maxWidth = '50px'
+      } else {
+        this.isCollapse = false;
+        c.style.minWidth = '250px'
+        c.style.maxWidth = '500px'
+        col.className = 'el-icon-s-fold'
+        menub.style.minwidth = '254px;'
+        menub.style.maxWidth = '254px;'
+      }
+    },
   },
 }
 </script>

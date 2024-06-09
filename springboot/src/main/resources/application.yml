@@ -2,8 +2,8 @@ server:
   port: 9090
 
 spring:
-  application:
-    name: lms
+  #  application:
+  #    name: lms
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/pp0alm?serverTimezone=GMT-5&allowMultiQueries=true # allow multi queries
@@ -12,8 +12,9 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  #    static-path-pattern: /static/**
   zipkin:
-    base-url: http://127.0.0.1:9411/
+    base-url: http://10.20.245.160:9411/
     sender:
       type: web
     discovery-client-enabled: false

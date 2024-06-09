@@ -24,12 +24,13 @@ public class AdminController {
 
     @PostMapping("/login")
     @ApiImplicitParam(name = "request", value = "登录请求")
-    @ApiOperation(value = "管理员登录", notes = "管理员登录")
+    @ApiOperation(value = "/login 管理员登录", notes = "管理员登录")
     public Result login(@RequestBody LoginRequest request) {
         return Result.success(adminService.login(request));
     }
 
     @PostMapping("/save")
+    @ApiImplicitParam(name = "admin", value = "管理员修改的密码")
     public Result save(@RequestBody Admin admin) {
         adminService.save(admin);
         return Result.success();

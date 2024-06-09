@@ -146,8 +146,13 @@ const routes = [
         path: 'minio',
         name: 'minio',
         component: () => import('@/views/oss/Minio')
-      }
-
+      },
+        //==== github =====
+        // {
+        //   path: 'github',
+        //   name: 'github',
+        //   component: () => import('@/views/Personal')
+        // }
     ]
   },
   // ===== 404 =====
