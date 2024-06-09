@@ -13,16 +13,21 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * [Apache License 2.0](<a href="https://www.apache.org/licenses/LICENSE-2.0">...</a>)
+ * <p>
+ * This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+ * <p>
+ * Copyright (c) 2024-present, Zhai JinPei
+ */
 @Slf4j
 @Service
 public class BorrowService implements IBorrowService {

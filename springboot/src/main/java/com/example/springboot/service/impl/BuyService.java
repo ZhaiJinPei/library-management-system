@@ -1,17 +1,13 @@
 package com.example.springboot.service.impl;
 
-import com.example.springboot.controller.request.BorrowPageRequest;
 import com.example.springboot.controller.request.BuyPageRequest;
 import com.example.springboot.entity.Book;
-import com.example.springboot.entity.Borrow;
 import com.example.springboot.entity.Buy;
 import com.example.springboot.entity.User;
 import com.example.springboot.exception.ServiceException;
 import com.example.springboot.mapper.BookMapper;
-import com.example.springboot.mapper.BorrowMapper;
 import com.example.springboot.mapper.BuyMapper;
 import com.example.springboot.mapper.UserMapper;
-import com.example.springboot.service.IBorrowService;
 import com.example.springboot.service.IBuyService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -24,6 +20,13 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * [Apache License 2.0](<a href="https://www.apache.org/licenses/LICENSE-2.0">...</a>)
+ * <p>
+ * This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+ * <p>
+ * Copyright (c) 2024-present, Zhai JinPei
+ */
 @Slf4j
 @Service
 public class BuyService implements IBuyService {

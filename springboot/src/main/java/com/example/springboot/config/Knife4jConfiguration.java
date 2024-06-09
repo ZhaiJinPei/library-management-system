@@ -10,6 +10,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
+/**
+ * [Apache License 2.0](<a href="https://www.apache.org/licenses/LICENSE-2.0">...</a>)
+ * <p>
+ * This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+ * <p>
+ * Copyright (c) 2024-present, Zhai JinPei
+ */
 @Configuration
 @EnableSwagger2WebMvc
 public class Knife4jConfiguration {

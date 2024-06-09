@@ -1,3 +1,9 @@
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+
+Copyright (c) 2024-present, Zhai JinPei
+
 ## Introduction
 This is an exercise project that aims to get familiar with vue.js and Spring Boot by building a library management system. The system can manage books, categories, users, administrators, borrowings and returns. It also provides a line chart module to visualize the statistics of the library.
 

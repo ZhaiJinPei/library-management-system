@@ -1,3 +1,10 @@
+<!--
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+
+Copyright (c) 2024-present, Zhai JinPei
+-->
 <template>
   <div class="container"
        style="width:100%;height:100%;background: url('http://10.20.245.160:9000/jpg/minioss.png') no-repeat;background-size: 100%;background-attachment: scroll">

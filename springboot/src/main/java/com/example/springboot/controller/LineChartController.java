@@ -5,6 +5,13 @@ import com.example.springboot.service.ILineChartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * [Apache License 2.0](<a href="https://www.apache.org/licenses/LICENSE-2.0">...</a>)
+ * <p>
+ * This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+ * <p>
+ * Copyright (c) 2024-present, Zhai JinPei
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/lineChart")
