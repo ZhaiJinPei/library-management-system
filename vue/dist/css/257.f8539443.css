@@ -1,0 +1,1 @@
+.cover-viewer{opacity:.5}.cover-viewer:after{content:"点击查看图片,可调整";position:relative;display:none;top:100%;padding:5px;left:0;color:#060615}.cover-viewer:hover:after{display:block}.el-tooltip__popper{max-width:400px}
