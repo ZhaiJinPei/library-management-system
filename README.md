@@ -95,7 +95,7 @@ cd ./vue
 npm i
 ```
 
-11. 等待依赖加载完后,运行
+11. 等待依赖加载完后,运行,或直接进入dist目录
 
 ```shell
 npm run serve
