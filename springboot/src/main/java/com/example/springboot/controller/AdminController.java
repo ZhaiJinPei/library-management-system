@@ -21,7 +21,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
-@Api("系统管理员相关接口")
+@Api(tags = "AdminController: 系统管理员相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/admin")

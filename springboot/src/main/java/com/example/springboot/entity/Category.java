@@ -1,6 +1,8 @@
 package com.example.springboot.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import java.util.Date;
@@ -13,6 +15,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "Category: 图书类型实体类")
 @Data
 public class Category {
     private Integer id;

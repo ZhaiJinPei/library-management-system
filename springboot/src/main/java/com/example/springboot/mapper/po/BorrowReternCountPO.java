@@ -1,5 +1,6 @@
 package com.example.springboot.mapper.po;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel("BorrowReturnCountPO: 借还计数持久层对象封装")
 @Data
 public class BorrowReternCountPO {
     private String date;

@@ -17,6 +17,7 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+
 <template>
   <div style="padding: 10px;">
     <div
@@ -26,13 +27,15 @@
         <el-breadcrumb-item>&ensp;<em><strong>Admin List 管理员详情</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+
     <div
-        style="font-size: 40px; font-family: 'roboto mono', monospace;margin-left: 10px;margin-top: 10px; margin-bottom: 10px">
+        style="font-size: 50px; font-family: 'roboto mono', monospace;margin-left: 50px;margin-top: 50px; margin-bottom: 50px">
       Add New Admin 新增管理员
     </div>
 
-    <div style="width: 50%;">
-      <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
+    <div style="width: 50%;transform: scale(2,2);">
+      <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px"
+               style="margin-left: 300px;margin-top: 300px">
         <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
           <el-input v-model="form.fname" placeholder="Enter first name"></el-input>
         </el-form-item>
@@ -40,7 +43,7 @@
           <el-input v-model="form.minit" placeholder="Enter middle"></el-input>
         </el-form-item>
         <el-form-item label="Last Name 姓氏: " prop="lname" style="margin-left: 2px">
-          <el-input  v-model="form.lname"  placeholder="Enter last name"></el-input>
+          <el-input v-model="form.lname" placeholder="Enter last name"></el-input>
         </el-form-item>
         <el-form-item label="Email 邮箱账号: " prop="email" style="margin-left: 2px">
           <el-input v-model="form.email" placeholder="Enter email"></el-input>
@@ -63,10 +66,12 @@
       </el-form>
 
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="margin-left: 200px; height: 40px; min-width: 100px" type="primary" @click="save">Submit
+        </el-button>
       </div>
     </div>
   </div>
+
 </template>
 
 <script>

@@ -25,7 +25,7 @@
         <el-breadcrumb-item>&ensp;<em><strong>Homepage 系统主页</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="padding: 10px;">
+    <div style="padding: 10px;width: 99%">
       <!-- date range selector -->
       <div>
         <el-select v-model="form.dateRange" placeholder="Select date range" @change="load">
@@ -38,27 +38,27 @@
         </el-select>
       </div>
       <!-- line chart area -->
-      <div style="margin-top: 10px">
+      <div style="margin-top: 10px;">
         <el-card>
-          <div id="lineChart" style="width: 100%; height: 800px"></div>
+          <div id="lineChart" style="width: 100%; height: 700px"></div>
         </el-card>
       </div>
       <div class="block"
-           style="font-family: 'roboto mono', monospace;background: rgba(97,92,92,0.8);margin-top: 10px;border-radius: 5px">
+           style="font-family: 'roboto mono', monospace;background: rgba(97,92,92,0.8);margin-top: 20px;border-radius: 5px">
         <span class="demonstration" style="margin-left: 1px"></span>
         <el-carousel height="150px">
           <el-carousel-item v-for="item in png1" :key="item">
-            <img :src="item" style="opacity: 0.8"/>
+            <img :src="item" style="opacity: 0.8;width: 100%;height: 100%;"/>
           </el-carousel-item>
         </el-carousel>
         <span class="demonstration" style="margin-left: 1px"></span>
       </div>
       <div class="block"
-           style="font-family: 'roboto mono', monospace;background: rgba(0,0,0,0.25);margin-top: 10px;border-radius: 5px">
+           style="font-family: 'roboto mono', monospace;background: rgba(0,0,0,0.25);margin-top: 20px;border-radius: 5px">
         <span class="demonstration" style="margin-left: 1px"></span>
         <el-carousel height="150px">
           <el-carousel-item v-for="item in png2" :key="item">
-            <img :src="item" style="opacity: 0.8"/>
+            <img :src="item" style="opacity: 0.8;width: 100%;height: 100%"/>
           </el-carousel-item>
         </el-carousel>
         <span class="demonstration" style="margin-left: 1px"></span>

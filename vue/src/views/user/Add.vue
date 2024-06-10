@@ -26,10 +26,14 @@
         <el-breadcrumb-item>&ensp;<em><strong>New User 新增用户</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-top: 10px; margin-bottom: 10px">Add New
+    <!--    <div class="form-wrapper"-->
+    <!--    >-->
+    <div
+        style="font-size: 50px; color: #000000;font-family: 'roboto mono', monospace; margin-top: 90px; margin-left: 95px;margin-bottom: 10px">
+      Add New
       User 新增用户
     </div>
-    <div style=" width: 40%">
+    <div style=" width: 40%; margin-left:500px;margin-top:300px;transform: scale(2,2)">
       <!-- form area -->
       <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
         <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
@@ -78,10 +82,13 @@
       </el-form>
       <!-- button area -->
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="margin-left: 2px; height: 40px; min-width: 100px" type="primary" @click="save">Submit
+        </el-button>
       </div>
     </div>
   </div>
+
+  <!--  </div>-->
 </template>
 
 <script>

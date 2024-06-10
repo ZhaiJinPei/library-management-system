@@ -1,5 +1,7 @@
 package com.example.springboot.entity;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -10,6 +12,7 @@ import lombok.EqualsAndHashCode;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "Admin: 管理员实体类")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Admin extends Person {

@@ -12,6 +12,7 @@ import com.example.springboot.mapper.AdminMapper;
 import com.example.springboot.service.IAdminService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+
 @Slf4j
 @Service
 public class AdminService implements IAdminService {
@@ -67,6 +69,7 @@ public class AdminService implements IAdminService {
         adminMapper.deleteByEmail(email);
     }
 
+    @ApiOperation(value = "管理员登录", notes = "默认密码是")
     @Override
     public LoginDTO login(LoginRequest request) {
         request.setPassword(secPass(request.getPassword()));

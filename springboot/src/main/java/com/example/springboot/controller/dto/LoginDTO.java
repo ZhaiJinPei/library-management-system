@@ -10,7 +10,7 @@ import lombok.Data;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
-@Api("LoginDTO:管理员登录数据封装类")
+@Api(tags = "LoginDTO:管理员登录响应数据传输对象封装")
 @Data
 public class LoginDTO {
     private String email;

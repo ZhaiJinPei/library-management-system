@@ -4,6 +4,7 @@ import com.example.springboot.common.Result;
 import com.example.springboot.controller.request.BuyPageRequest;
 import com.example.springboot.entity.Buy;
 import com.example.springboot.service.IBuyService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "BuyController: 购书相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/buy")

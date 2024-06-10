@@ -3,4 +3,16 @@
 #This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
 #
 #Copyright (c) 2024-present, Zhai JinPei
-spring.application.name=file-service
+
+minio:
+  endpoint: http://10.20.245.160:9000
+  accesskey: minioadmin
+  secretkey: minioadmin
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+server:
+  port: 7000

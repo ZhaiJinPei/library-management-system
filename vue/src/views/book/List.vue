@@ -20,32 +20,36 @@
 <template>
   <div style="padding: 10px">
     <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+        style="width:96%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Book List 图书详情</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 10px; margin-top: 10px">
       <el-input v-model="params.name" placeholder="Enter book's name" style="width: 200px; margin-left: 2px"></el-input>
-      <el-input v-model="params.isbn" placeholder="Enter ISBN" style="width: 200px; margin-left: 2px"></el-input>
-      <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
-      <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
+      <el-input v-model="params.isbn" placeholder="Enter ISBN" style="width: 200px; margin-left: 3px"></el-input>
+      <el-button icon="el-icon-search" style="margin-left: 3px; height: 40px" type="primary" @click="load">Search
+      </el-button>
+      <el-button icon="el-icon-refresh-right" style="margin-left: 3px; height: 40px" type="warning" @click="reset">
+        Reset
+      </el-button>
     </div>
     <!-- table area -->
     <div>
-      <el-table :data="tableData" stripe style="margin-left: 3px;width: 99%">
-        <el-table-column prop="isbn" label="ISBN" width="90"></el-table-column>
-        <el-table-column prop="name" label="Name" show-overflow-tooltip width="120"></el-table-column>
-        <el-table-column prop="category" label="Category" width="130"></el-table-column>
-        <el-table-column prop="author" label="Author" width="100"></el-table-column>
-        <el-table-column prop="publisher" label="Publisher" show-overflow-tooltip width="100"></el-table-column>
-        <el-table-column prop="publish_date" label="Publish Date" width="120"></el-table-column>
-        <el-table-column prop="description" label="Description" show-overflow-tooltip width="300"></el-table-column>
-        <el-table-column prop="cDate" label="Create Date" width="110"></el-table-column>
-        <el-table-column prop="uDate" label="Update Date" width="110"></el-table-column>
-        <el-table-column prop="cover" label="Cover" width="100">
+      <el-table :data="tableData" stripe
+                style="margin-left: 3px;width: 96%;font-family: 'roboto mono', monospace;font-size: 20px">
+        <el-table-column label="ISBN" prop="isbn" width="150"></el-table-column>
+        <el-table-column label="Name" prop="name" show-overflow-tooltip width="100"></el-table-column>
+        <el-table-column label="Category" prop="category" width="400"></el-table-column>
+        <el-table-column label="Author" prop="author" width="200"></el-table-column>
+        <el-table-column label="Publisher" prop="publisher" show-overflow-tooltip width="200"></el-table-column>
+        <el-table-column label="Publish Date" prop="publish_date" width="160"></el-table-column>
+        <el-table-column label="Description" prop="description" show-overflow-tooltip width="400"></el-table-column>
+        <el-table-column label="Create Date" prop="cDate" width="210"></el-table-column>
+        <el-table-column label="Update Date" prop="uDate" width="210"></el-table-column>
+        <el-table-column label="Cover" prop="cover" width="110">
           <template v-slot="scope1">
             <div v-viewer.static="{movable:false,title:false}" class="cover-viewer">
               <el-image :src="scope1.row.cover" style="width: 50%; height: 50%;"></el-image>
@@ -53,7 +57,7 @@
           </template>
         </el-table-column>
         <el-table-column prop="credit" label="Score" width="85"></el-table-column>
-        <el-table-column prop="number" label="Number" width="85"></el-table-column>
+        <el-table-column label="Number" prop="number" width="95"></el-table-column>
         <el-table-column fixed="right" label="Operation" width="200">
           <template v-slot="scope">
             <el-button type="primary" @click="$router.push('/editBook?isbn=' + scope.row.isbn)">Edit</el-button>

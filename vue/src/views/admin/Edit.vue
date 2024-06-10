@@ -17,6 +17,7 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+
 <template>
   <div style="padding: 10px;">
     <div
@@ -26,11 +27,14 @@
         <el-breadcrumb-item>&ensp;<em><strong>Edit Admin 编辑管理员</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit Admin
+
+    <div
+        style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+      Edit Admin
       编辑管理员
     </div>
 
-    <div style="width: 60%">
+    <div style="width: 30%;transform: scale(2,2);margin-left: 500px;margin-top: 250px">
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
           <el-input v-model="form.fname" placeholder="Enter first name"></el-input>

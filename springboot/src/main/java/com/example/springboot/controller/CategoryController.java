@@ -4,6 +4,7 @@ import com.example.springboot.common.Result;
 import com.example.springboot.controller.request.CategoryPageRequest;
 import com.example.springboot.entity.Category;
 import com.example.springboot.service.ICategoryService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "CategoryController: 图书类型相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/category")

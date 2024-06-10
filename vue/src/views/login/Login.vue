@@ -20,10 +20,10 @@
 <template>
   <!--  <div class="box" style="height: 100vh; overflow: hidden">-->
   <div ref="vantaRef" class="box" style=" height: 100vh ;">
-    <div class="banner" rel="vantaRel" style="width: 600px; height: 500px;  border-radius: 10px; padding: 50px;">
+    <div class="banner" rel="vantaRel" style="width: 600px; height: 500px;  border-radius: 10px; padding: 40px;">
       <!-- header -->
       <div
-          style="margin-top: 50px; text-align: center; font-size: 80px;  font-family: '华文楷体',cursive; color: #fff9f9">
+          style="margin-top: 50px; text-align: center;justify-content: center; font-size: 80px;  font-family: '华文楷体',cursive; color: #fff9f9">
         图书管理系统<br>
         <div style="margin-top:5px ;font-size: 28px;font-family: 'roboto mono', monospace">Library Management System
         </div>
@@ -47,6 +47,9 @@
         </el-button>
       </div>
     </div>
+    <footer
+        style="position: absolute;justify-content:center;bottom: 10px;right: 42%;font-family: 'roboto mono', monospace;color: #fff9f9">
+      <code>Apache License 2.0 copyright (c) 2024-present Zhai JinPei</code></footer>
   </div>
   <!--  </div>-->
 </template>

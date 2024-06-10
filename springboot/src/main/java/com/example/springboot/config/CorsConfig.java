@@ -1,5 +1,6 @@
 package com.example.springboot.config;
 
+import io.swagger.annotations.Api;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +16,7 @@ import java.io.IOException;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api("跨域配置")
 @Configuration
 public class CorsConfig implements Filter {
 

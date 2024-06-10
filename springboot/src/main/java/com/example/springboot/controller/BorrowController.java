@@ -4,6 +4,7 @@ import com.example.springboot.common.Result;
 import com.example.springboot.controller.request.BorrowPageRequest;
 import com.example.springboot.entity.Borrow;
 import com.example.springboot.service.IBorrowService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "BorrowController: 借书相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/borrow")

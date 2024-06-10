@@ -20,49 +20,53 @@
 <template>
   <div style="padding: 10px">
     <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+        style="width:92%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>User 用户</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>User List 用户详情</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 5px; margin-top: 10px">
       <el-input v-model="params.email" placeholder="Enter user email" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.uid" placeholder="Enter user id" style="width: 200px; margin-left: 2px"></el-input>
       <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <div style="margin-right: 10px;">
-      <el-table :data="tableData" stripe style="width: 100% ;margin-left: 3px;">
-        <el-table-column prop="status" label="Status" width="80">
+    <div style="margin-top:10px;margin-right: 10px;width: 92%">
+      <el-table :data="tableData" stripe
+                style="width: 100%;margin-left: 3px;font-size: 24px;font-family: 'roboto mono', monospace">
+        <el-table-column label="Status" prop="status" width="100">
           <template v-slot="scope2">
             <el-switch
                 v-model="scope2.row.status"
                 active-color="#13ce66"
                 inactive-color="#ff4949"
+                width="50"
                 @change="changeStatus(scope2.row)">
             </el-switch>
           </template>
         </el-table-column>
-        <el-table-column prop="uid" label="User ID" show-overflow-tooltip width="130"></el-table-column>
-        <el-table-column prop="username" label="Username" show-overflow-tooltip width="100"></el-table-column>
-        <el-table-column prop="fname" label="First Name" width="100"></el-table-column>
-        <el-table-column prop="lname" label="Last Name" width="100"></el-table-column>
-        <el-table-column prop="age" label="Age" width="50"></el-table-column>
-        <el-table-column label="Email" prop="email" show-overflow-tooltip width="180"></el-table-column>
-        <el-table-column prop="phone" label="Phone" width="110"></el-table-column>
-        <el-table-column label="Province/State" prop="province" width="90"></el-table-column>
-        <el-table-column prop="city" label="City" show-overflow-tooltip width="80"></el-table-column>
-        <el-table-column prop="street" label="Street" show-overflow-tooltip width="100"></el-table-column>
-        <el-table-column prop="ctime" label="Create Date" width="120"></el-table-column>
-        <el-table-column prop="utime" label="Update Date" width="120"></el-table-column>
-        <el-table-column label="Score" prop="acredit" width=70></el-table-column>
-        <el-table-column fixed="right" label="Operations" width="200">
+        <el-table-column label="User ID" prop="uid" show-overflow-tooltip width="200"></el-table-column>
+        <el-table-column label="Username" prop="username" show-overflow-tooltip width="140"></el-table-column>
+        <el-table-column label="First Name" prop="fname" width="160"></el-table-column>
+        <el-table-column label="Last Name" prop="lname" width="140"></el-table-column>
+        <el-table-column label="Age" prop="age" width="60"></el-table-column>
+        <el-table-column label="Email" prop="email" show-overflow-tooltip width="280"></el-table-column>
+        <el-table-column label="Phone" prop="phone" width="180"></el-table-column>
+        <el-table-column label="Province/State" prop="province" width="220"></el-table-column>
+        <el-table-column label="City" prop="city" show-overflow-tooltip width="100"></el-table-column>
+        <el-table-column label="Street" prop="street" show-overflow-tooltip width="200"></el-table-column>
+        <el-table-column label="Create Date" prop="ctime" width="200"></el-table-column>
+        <el-table-column label="Update Date" prop="utime" width="200"></el-table-column>
+        <el-table-column label="Score" prop="acredit" width=90></el-table-column>
+        <el-table-column fixed="right" label="Operations" width="300">
           <template v-slot="scope">
             <el-button type="success" @click="chargeOpen(scope.row)">Recharge</el-button>
-            <el-button type="primary" style="margin-left: 2px;" @click="$router.push('/editUser?email=' + scope.row.email)">Edit</el-button>
+            <el-button style="margin-left: 5px;margin-right: 5px" type="primary"
+                       @click="$router.push('/editUser?email=' + scope.row.email)">Edit
+            </el-button>
             <el-popconfirm
                 confirm-button-text='Yes'
                 cancel-button-text='No'

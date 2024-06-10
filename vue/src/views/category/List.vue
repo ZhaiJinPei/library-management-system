@@ -27,16 +27,19 @@
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 10px; margin-top: 10px">
       <el-input v-model="params.name" placeholder="Enter category" style="width: 200px; margin-left: 2px"></el-input>
-      <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
-      <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
+      <el-button icon="el-icon-search" style="margin-left: 5px; height: 40px" type="primary" @click="load">Search
+      </el-button>
+      <el-button icon="el-icon-refresh-right" style="margin-left: 5px; height: 40px" type="warning" @click="reset">
+        Reset
+      </el-button>
     </div>
     <!-- table area -->
     <el-table :data="tableData" :tree-props="{children: 'children', hasChildren: 'hasChildren'}" row-key="id"
-              stripe style="margin-left: 3px;width: 99%">
+              stripe style="margin-left: 4px;width: 99%;font-size: 20px;font-family: 'roboto mono', monospace">
       <el-table-column prop="id" label="ID" width="100"></el-table-column>
-      <el-table-column prop="name" label="Category Name" width="150"></el-table-column>
+      <el-table-column label="Category Name" prop="name" width="250"></el-table-column>
       <el-table-column prop="remark" label="Remark"></el-table-column>
       <el-table-column prop="cDate" label="Create Date"></el-table-column>
       <el-table-column prop="uDate" label="Update Date"></el-table-column>
@@ -45,7 +48,8 @@
           <el-button type="success" v-if="!scope.row.pid" @click="addChild(scope.row)">
             New Child Category
           </el-button>
-          <el-button type="primary" style="margin-left: 2px;" @click="$router.push('/editCategory?name=' + scope.row.name)">
+          <el-button style="margin-left: 3px;" type="primary"
+                     @click="$router.push('/editCategory?name=' + scope.row.name)">
             Edit
           </el-button>
           <!-- delete -->
@@ -55,7 +59,7 @@
               title="Are you sure you want to delete this row of data？"
               @confirm="del(scope.row.name)"
           >
-            <el-button style="margin-left: 2px;" slot="reference" type="danger">Delete</el-button>
+            <el-button slot="reference" style="margin-left: 3px;" type="danger">Delete</el-button>
           </el-popconfirm>
         </template>
       </el-table-column>
@@ -110,7 +114,7 @@ export default {
       tableData: [],
       params: {
         pageNum: 1,
-        pageSize: 10,
+        pageSize: 15,
         name: ''
       },
     }

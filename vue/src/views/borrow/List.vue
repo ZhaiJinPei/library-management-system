@@ -20,33 +20,36 @@
 <template>
   <div style="padding: 10px">
     <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+        style="width:98%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Book Borrow 图书借阅</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Borrow Records 借阅记录</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 10px; margin-top: 10px">
       <el-input v-model="params.username" placeholder="Enter username" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.name" placeholder="Enter book's name" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.isbn" placeholder="Enter book's isbn" style="width: 200px; margin-left: 2px"></el-input>
-      <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
-      <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
+      <el-button icon="el-icon-search" style="margin-left: 3px; height: 40px" type="primary" @click="load">Search
+      </el-button>
+      <el-button icon="el-icon-refresh-right" style="margin-left: 3px; height: 40px" type="warning" @click="reset">
+        Reset
+      </el-button>
     </div>
     <!-- table area -->
-    <div style="margin-left: 3px;width: 99%">
-      <el-table :data="tableData" style="width: 100%" stripe>
-        <el-table-column prop="uid" label="User ID" show-overflow-tooltip width="150"></el-table-column>
-        <el-table-column prop="username" label="Username" show-overflow-tooltip width="100"></el-table-column>
-        <el-table-column prop="phone" label="Phone" width="100"></el-table-column>
-        <el-table-column prop="name" label="Book Name" show-overflow-tooltip width="500"></el-table-column>
-        <el-table-column prop="isbn" label="ISBN" width="100"></el-table-column>
-        <el-table-column prop="bstatus" label="Status" width="80"></el-table-column>
-        <el-table-column prop="cdate" label="Borrow Date" width="110" :formatter="createDateFormat"></el-table-column>
-        <el-table-column prop="duration" label="Days" width="55"></el-table-column>
-        <el-table-column prop="rdate" label="Due Date" width="110" :formatter="dueDateFormat"></el-table-column>
-        <el-table-column prop="notification" label="Notification">
+    <div style="margin-left: 3px;width: 98%">
+      <el-table :data="tableData" stripe style="width: 100%;font-size: 20px;font-family: 'roboto mono', monospace">
+        <el-table-column label="User ID" prop="uid" show-overflow-tooltip width="250"></el-table-column>
+        <el-table-column label="Username" prop="username" show-overflow-tooltip width="200"></el-table-column>
+        <el-table-column label="Phone" prop="phone" width="200"></el-table-column>
+        <el-table-column label="Book Name" prop="name" show-overflow-tooltip width="400"></el-table-column>
+        <el-table-column label="ISBN" prop="isbn" width="200"></el-table-column>
+        <el-table-column label="Status" prop="bstatus" width="190"></el-table-column>
+        <el-table-column :formatter="createDateFormat" label="Borrow Date" prop="cdate" width="200"></el-table-column>
+        <el-table-column label="Days" prop="duration" width="70"></el-table-column>
+        <el-table-column :formatter="dueDateFormat" label="Due Date" prop="rdate" width="200"></el-table-column>
+        <el-table-column label="Notification" prop="notification" width="160">
           <template v-slot="scope1">
             <el-tag type="danger" v-if="scope1.row.notification === 'past due'">
               {{ scope1.row.notification }}
@@ -62,14 +65,14 @@
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column fixed="right" label="Management">
+        <el-table-column fixed="right" label="Management" width="130">
           <template v-slot="scope2">
             <el-button type="primary" style="margin-left: 2px;" @click="bookReturn(scope2.row)" v-if="scope2.row.bstatus === 'Borrowed'">
               Return
             </el-button>
           </template>
         </el-table-column>
-        <el-table-column fixed="right" label="Operation">
+        <el-table-column fixed="right" label="Operation" width="150">
           <template v-slot="scope">
             <el-popconfirm
                 confirm-button-text='Yes'

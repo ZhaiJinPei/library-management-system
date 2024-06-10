@@ -140,7 +140,7 @@ const routes = [
         name: 'zipkin',
         component: () => import('@/views/trace/Zipkin')
       },
-      //==== skywaling =====
+      //==== skywalking =====
       {
         path: "skywalking",
         name: 'skywalking',
@@ -152,12 +152,12 @@ const routes = [
         name: 'minio',
         component: () => import('@/views/oss/Minio')
       },
-        //==== github =====
-        // {
-        //   path: 'github',
-        //   name: 'github',
-        //   component: () => import('@/views/Personal')
-        // }
+      // ==== search =====
+      // {
+      //   path: 'search/:id',
+      //   name: 'search',
+      //   component: () => import('@/views/Search')
+      // }
     ]
   },
   // ===== 404 =====
@@ -172,6 +172,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 router.beforeResolve((to, from, next) => {
   if (to.path === '/login') next()

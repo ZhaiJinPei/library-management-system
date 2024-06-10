@@ -10,7 +10,7 @@ import lombok.Data;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
-@Api("管理员登录请求数据封装类")
+@Api(tags = "管理员登录请求数据封装")
 @Data
 public class LoginRequest {
     private String email;

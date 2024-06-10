@@ -17,6 +17,7 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+
 <template>
   <div style="padding: 10px;">
     <div
@@ -26,10 +27,15 @@
         <el-breadcrumb-item>&ensp;<em><strong>New Borrow Record 新增借阅记录</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+    <!--    <div-->
+    <!--        class="form-wrapper"-->
+    <!--    ></div>-->
+    <div
+        style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+      Add New
       Borrow Record 新增借阅记录
     </div>
-    <div style=" width: 50%">
+    <div style=" width: 40%;transform: scale(2,2);margin-left: 500px;margin-top: 250px">
       <!-- form area -->
       <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
         <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">
@@ -78,7 +84,7 @@
       </el-form>
       <!-- button area -->
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="height: 40px; min-width: 100px" type="primary" @click="save">Submit</el-button>
       </div>
     </div>
   </div>

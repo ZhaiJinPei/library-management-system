@@ -18,7 +18,7 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div class='footer' style="background: rgba(114,118,123,0.54)">
+  <div class='footer' style="background: transparent">
     <span style="padding-right: 20px" @click="law = true">Apache License 2.0</span>
     <el-divider direction="vertical"></el-divider>
     <span style="padding-left: 20px;padding-right: 20px" @click="link = true">Quick Links</span>
@@ -280,6 +280,8 @@
         <i class="el-icon-phone"></i>Phone：+8613511704552<br/>
         <i class="el-icon-message"></i>Email：godj47552@gmail.com<br/>
         <i class="el-icon-s-home"></i>https://github.com/ZhaiJinPei/<br/>
+        <i class="el-icon-lock"></i>License: Apache License 2.0<br/>
+        <i class="el-icon-info"></i>Copyright (c) 2024-present, Zhai JinPei<br/>
       </p>
     </el-drawer>
   </div>
@@ -301,6 +303,19 @@
 
 .footer {
   cursor: pointer;
+}
+
+.footer::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(114, 118, 123, 0.73);
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: opacity(0.4);
+  -webkit-filter: opacity(0.5);
 }
 
 .copyright {

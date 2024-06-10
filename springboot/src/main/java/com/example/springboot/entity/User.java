@@ -1,6 +1,7 @@
 package com.example.springboot.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,6 +14,7 @@ import java.util.Date;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "User: 非管理员用户实体类")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class User extends Person {

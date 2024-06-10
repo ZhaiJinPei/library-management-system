@@ -30,6 +30,11 @@
         <span ref="theme3" v-model="themec"
               style="background-color: #fff9f9; margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
       </div>
+      <!--      <div style="transform: scale(1.1,1.1)">-->
+      <!--        <el-input placeholder="请输入内容" v-model="sinp" @keyup.enter.native="search" class="input-with-select">-->
+      <!--          <el-button slot="append" @click="search" icon="el-icon-search"></el-button>-->
+      <!--        </el-input>-->
+      <!--      </div>-->
       <!-- admins' info -->
       <div ref="theme5" v-model="themec"
            style="color: black;flex: 1; text-align: right; margin-right: 40px;background: #fff9f9">
@@ -87,7 +92,7 @@
     <div style="display: flex">
       <!-- side -->
       <div ref="theme4" v-model="themec"
-           style="min-width: 250px; max-width: 500px;min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
+           style="min-width: 65px; max-width: 65px;min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
         <el-menu
             :default-active="$route.path"
             :default-opens="['user']"
@@ -178,7 +183,7 @@
           </template>
             <el-menu-item index="/addBorrow">
               <i class="el-icon-add-location" style="margin-left:-20px"></i>
-              &emsp;&emsp;&emsp;&emsp;New Borrow Record 新增借阅记录
+              &emsp;&emsp;&emsp;&emsp;New Record 新增借阅记录
             </el-menu-item>
             <el-menu-item index="/BorrowList">
               <i class="el-icon-s-operation" style="margin-left: -20px"></i>
@@ -238,22 +243,22 @@
         <i ref="col"
            :collapse="isCollapse"
            class="el-icon-s-fold"
+           id="i-fold"
            style="font-size: 32px;margin-left: 15px;margin-top: 10px" @click="onCollapse"></i>
 
-        <!--            <el-menu-->
-        <!--                :default-active="$route.path"-->
-        <!--                :default-opens="['user']"-->
-        <!--                :unique-opened="true"-->
-        <!--                ref="menub"-->
-        <!--                router-->
-        <!--                style="position: fixed;bottom: 18px;min-width:63px;max-width:63px;font-family: 'roboto mono', monospace;background: #cfd7dc"-->
-        <!--            >-->
-        <!--              <el-menu-item index="/github">-->
-        <!--                <i class="el-icon-share"></i>-->
-        <!--                &emsp;&emsp;&emsp;&emsp;Project Code-->
-        <!--              </el-menu-item>-->
-        <!--            </el-menu>-->
-
+        <!--                    <el-menu-->
+        <!--                        :default-active="$route.path"-->
+        <!--                        :default-opens="['user']"-->
+        <!--                        :unique-opened="true"-->
+        <!--                        ref="menub"-->
+        <!--                        router-->
+        <!--                        style="position: fixed;min-width:64px;max-width:64px;bottom: 41px;font-family: 'roboto mono', monospace;background: #cfd7dc"-->
+        <!--                    >-->
+        <!--                      <el-menu-item index="/search/vue">-->
+        <!--                        <i class="el-icon-share"></i>-->
+        <!--                        &emsp;&emsp;&emsp;&emsp;-->
+        <!--                      </el-menu-item>-->
+        <!--                    </el-menu>-->
 
       </div>
       <!-- main -->
@@ -267,6 +272,12 @@
 
 </template>
 
+<style>
+#i-fold:hover {
+  opacity: 0.6;
+}
+</style>
+
 <script>
 import Cookies from "js-cookie";
 import request from "@/utils/request";
@@ -278,7 +289,8 @@ export default {
   name: "Layout",
   provide() {
     return {
-      reload: this.reload
+      reload: this.reload,
+      sinp: ''
     }
   },
   data() {
@@ -301,7 +313,8 @@ export default {
       isRouterAlive: true,
       theme: false,
       themec: false,
-      isCollapse: false,
+      sinp: '',
+      isCollapse: true,
       rules: {
         password: [{ required: true, message: "Original password cannot be empty", trigger: 'blur' }],
         newPassword: [
@@ -351,6 +364,15 @@ export default {
         this.isRouterAlive = true;
       })
     },
+    //search
+    // search(){
+    //   if (this.sinp !== ''){}
+    //   else {
+    //     if (this.sinp === 'home' || 'userList' || 'addUser' || 'adminList' || 'addAdmin' || 'categoryList' || 'bookList' || 'addBook' || 'buyList' || 'addBuy' || 'borrowList' || 'addBorrow ' || 'reternList' || 'swagger' || 'zipkin' || 'skywalking' || 'minio' ){
+    //       this.$router.push(this.sinp + '/')
+    //     }
+    //   }
+    // },
     //   改变全屏
     changeScreen() {
       if (!ScreenFull.isEnabled) {
@@ -407,7 +429,7 @@ export default {
         menub.style.maxWidth = '50px'
       } else {
         this.isCollapse = false;
-        c.style.minWidth = '250px'
+        c.style.minWidth = '300px'
         c.style.maxWidth = '500px'
         col.className = 'el-icon-s-fold'
         menub.style.minwidth = '254px;'

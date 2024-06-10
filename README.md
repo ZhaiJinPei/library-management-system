@@ -15,18 +15,21 @@ limitations under the License.
 # 图书管理系统 Library Management System
 
 ![Static Badge](https://img.shields.io/badge/vue-v2.6.14-green)
+![Static Badge](https://img.shields.io/badge/vue_router-v3.5.1-green)
 ![Static Badge](https://img.shields.io/badge/npm-v10.2.3-purple)
 ![Static Badge](https://img.shields.io/badge/redis-v5.0.10-yellow)
 ![Static Badge](https://img.shields.io/badge/spring_boot-v2.7.7-green)
 ![Static Badge](https://img.shields.io/badge/mysql-v8.0-blue)
 ![Static Badge](https://img.shields.io/badge/license-apache_2.0-%2356c606)
 ![Static Badge](https://img.shields.io/badge/maven-v3.9.4-red)
+![Static Badge](https://img.shields.io/badge/zipkin-v3.4.0-red)
+![Static Badge](https://img.shields.io/badge/element_ui-v2.15.12-green)
 ![Static Badge](https://img.shields.io/badge/badge-https://shields.io/badges-%235387c6)
 ![Static Badge](https://img.shields.io/badge/author-Zhai_JinPei-%2300a2c6)
 
 ## 简介
 
-这是一个继承了多个服务的Spring Boot 2.7 + Vue 2.6 前后端分离Web项目。
+这是一个集成了多服务的Spring Boot + Vue 微服务项目。
 
 ## 安装
 
@@ -37,7 +40,7 @@ limitations under the License.
 - Maven 3.9 +
 - Docker Desktop latest
 - Zipkin 3.4
-- MySQL 8+
+- MySQL 8.0+
 - Redis 5.0.10
 - Skywalking-ui
 - Skywalking-oap-server
@@ -104,17 +107,29 @@ npm run serve
 
 ### 主页
 
+<img src="images/views/homen.png" alt="home view">
+
 <img src="images/views/HomeView.png" alt="home view">
+
+<img src="images/darkth.png" alt="home view">
 
 ### 列表展示
 
 <img src="images/views/bookList.png" alt="book list">
 
+<img src="images/views/categoryList.png" alt="book list">
+
 ### Swagger2 knife4j API 文档
 
 <img src="images/views/apidocs.png" alt="api doc">
 
+<img src="images/apitest.png" alt="api doc">
+
 ### Zipkin 链路追踪
+
+<img src="images/zipkin.png" alt="zipkin">
+
+<img src="images/zipkin2.png" alt="zipkin">
 
 <img src="images/views/zipkintrace.png" alt="zipkin">
 
@@ -122,9 +137,27 @@ npm run serve
 
 <img src="images/views/skywalkingtrace.png" alt="skywalking trace">
 
+<img src="images/apdex.png" alt="skywalking trace">
+
+<img src="images/strace.png" alt="skywalking trace">
+
+<img src="images/mysqltrace.png" alt="skywalking trace">
+
+<img src="images/table.png" alt="skywalking trace">
+
+<img src="images/topo.png" alt="skywalking trace">
+
+<img src="images/trace3.png" alt="skywalking trace">
+
+<img src="images/tree.png" alt="skywalking trace">
+
+<img src="images/jvm.png" alt="skywalking trace">
+
 ### Minio 对象存储
 
-<img src="images/views/fileupload.png" alt="minio">
+<img src="images/views/files.png" alt="minio">
+
+<img src="images/views/minio buckets.png" alt="minio">
 
 ## 功能点
 

@@ -17,6 +17,7 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+
 <template>
   <div style="padding: 10px;">
     <div
@@ -26,13 +27,18 @@
         <el-breadcrumb-item>&ensp;<em><strong>Edit Category 编辑类型信息</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+    <!--    <div-->
+    <!--        class="form-wrapper"-->
+    <!--        style="width: 99%"-->
+    <!--    ></div>-->
     <div>
-      <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit
-        Edit Category 编辑类型信息
+      <div
+          style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+        Edit Edit Category 编辑类型信息
       </div>
     </div>
 
-    <div style="width: 60%; margin-top: 10px">
+    <div style="width: 30%; margin-top: 200px;margin-left: 450px;transform: scale(2,2)">
       <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
         <el-form-item label="Category Name: " style="margin-left: 2px" prop="name">
           <el-input v-model="form.name" placeholder="Enter name"></el-input>
@@ -43,7 +49,8 @@
       </el-form>
 
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="margin-left: 2px; height: 40px; min-width: 100px;" type="primary" @click="save">Submit
+        </el-button>
       </div>
     </div>
   </div>

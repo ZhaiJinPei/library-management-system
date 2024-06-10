@@ -1,10 +1,9 @@
-/**
-* [Apache License 2.0](<a href="https://www.apache.org/licenses/LICENSE-2.0">...</a>)
-* <p>
-* This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
-* <p>
-* Copyright (c) 2024-present, Zhai JinPei
-*/
+#[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+#
+#This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
+#
+#Copyright (c) 2024-present, Zhai JinPei
+
 server:
   port: 9090
 

@@ -4,6 +4,7 @@ import com.example.springboot.common.Result;
 import com.example.springboot.controller.request.BookPageRequest;
 import com.example.springboot.entity.Book;
 import com.example.springboot.service.IBookService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "BookController: 图书相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/book")

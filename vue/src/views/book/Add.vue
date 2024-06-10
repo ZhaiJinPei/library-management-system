@@ -17,6 +17,21 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+<!--<style>-->
+<!--.form-wrapper::before {-->
+<!--  background: rgba(128, 150, 161, 0.87);-->
+<!--  box-shadow: 3px 3px #242424;-->
+<!--  border-radius: 10px;-->
+<!--  width:88%;-->
+<!--  height:80%;-->
+<!--  content: "";-->
+<!--  position: absolute;-->
+<!--  filter: opacity(0.6);-->
+<!--  -webkit-filter: opacity(0.6);-->
+<!--  left: 11%;-->
+<!--  top: 8%;-->
+<!--}-->
+<!--</style>-->
 <template>
   <div style="padding: 10px;">
     <div
@@ -26,10 +41,14 @@
         <el-breadcrumb-item>&ensp;<em><strong>Add New Book 新增图书 </strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px;font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+
+    <div
+        style="font-size: 50px;font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+      Add New
       Book 新增图书
     </div>
-    <div style="width: 50%">
+
+    <div style="width: 30%;transform: scale(2,2);margin-left: 500px;margin-top: 300px">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">

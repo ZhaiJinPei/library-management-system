@@ -1,5 +1,6 @@
 package com.example.springboot.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "")
 @Data
 public class LineChart {
     private Map<String, Object> lineChartMap;

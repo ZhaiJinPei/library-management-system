@@ -17,22 +17,25 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+
 <template>
   <div style="padding: 10px;">
     <div
-        style="padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Categories 图书类型</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>New Parent Category 新增类型</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+
     <div>
-      <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add
-        Parent Category 新增类型
+      <div
+          style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+        Add Parent Category 新增类型
       </div>
     </div>
 
-    <div style="width: 60%; margin-top: 2px">
+    <div style="width: 30%;transform: scale(2,2);margin-top: 200px; margin-left: 500px">
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="Category Name: " style="margin-left: 2px" prop="name">
           <el-input v-model="form.name" placeholder="Enter name"></el-input>
@@ -43,11 +46,12 @@
       </el-form>
 
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="height: 40px; min-width: 100px;transform: scale(1.2,1.2)" type="primary" @click="save">
+          Submit
+        </el-button>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>

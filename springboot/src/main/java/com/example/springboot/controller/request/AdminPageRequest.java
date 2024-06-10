@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
-@Api("管理员分页查询请求数据封装类")
+@Api(tags = "管理员分页查询请求数据封装")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class AdminPageRequest extends BaseRequest {

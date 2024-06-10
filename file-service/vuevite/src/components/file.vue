@@ -7,93 +7,138 @@ Copyright (c) 2024-present, Zhai JinPei
 -->
 <template>
   <div class="container"
-       style="width:100%;height:100%;background: url('http://10.20.245.160:9000/jpg/minioss.png') no-repeat;background-size: 100%;background-attachment: scroll">
-    <h2 style="font-family: 华文楷体,sans-serif;font-size: 50px;">Minio 文件上传</h2>
-    <span style="font-size: 20px"><code>url: http://ip:9000/</code></span>
-    <br>
+       style="width:100%;height:100%;background: url('http://10.20.245.160:9000/jpg/minioss.png') no-repeat;background-size: 100%;background-attachment: scroll;">
+    <h2 style="font-family: 华文楷体,sans-serif;font-size: 50px;">本地文件上传</h2>
+    <span style="margin-top: 0;font-size: 22px"><code>url: http://ip:9000/</code></span>
     <br>
     <br>
     <el-upload ref="upload" :auto-upload="false" :file-list="uploadFileList" :on-change="handleFileChange"
-               :on-remove="handleRemove" :show-file-list="false" class="upload-demo" multiple style="height: 50px">
+               :on-remove="handleRemove" :show-file-list="false" class="upload-demo" multiple
+               style="height: 50px;">
       <template #trigger>
-        <el-button plain type="primary">选择文件</el-button>
+        <el-button plain style="transform: scale(1.4,1.5);margin: 10px 40px 20px 20px;" type="primary">选择文件
+        </el-button>
       </template>
 
-      <el-button :disabled="uploadDisabled" style="margin-left: 5px;" type="success" @click="handler">上传</el-button>
+      <el-button :disabled="uploadDisabled" style="transform: scale(1.4,1.3);margin: 10px 30px 20px 20px;"
+                 type="success" @click="handler">上传
+      </el-button>
 
-      <el-button type="danger" @click="clearFileHandler">清空</el-button>
+      <el-button style="transform: scale(1.4,1.3);margin: 10px 30px 20px 20px;" type="danger" @click="clearFileHandler">
+        清空
+      </el-button>
 
       <el-button
+          style="transform:scale(1.4,1.3);margin: 10px 30px 20px 20px;"
           :disabled="!uploadIdInfoList[currentFileIndex] || (uploadIdInfoList[currentFileIndex] && uploadIdInfoList[currentFileIndex].status != '正在上传')"
           :type="isPaused ? 'success' : 'danger'" @click="continueOrPauseUpload">{{
           isPaused ? '继续' : '暂停'
         }}
       </el-button>
     </el-upload>
+    <div class="list" style="overflow: scroll;height: 80%;margin-top: 35px">
+      <!-- 文件列表 -->
+      <div class="file-list-wrapper" style="width: 52%;margin: 200px auto;padding-left: 50px;">
 
-    <!-- 文件列表 -->
-    <div class="file-list-wrapper" style="width: 50%;margin: 200px auto">
+        <el-collapse>
+          <el-collapse-item v-for="(item, index) in uploadFileList"
+                            :key="index" :name="index" style="margin-bottom: 20px;box-shadow: 2px 3px #56575c;border-radius: 10px;">
+            <template #title>
 
-      <el-collapse>
-        <el-collapse-item v-for="(item, index) in uploadFileList" :key="index" :name="index">
-          <template #title>
+              <el-row align="middle" style="width:98%;
+            border-radius: 10px;
+            background: rgba(6,148,246,0.71);
+            opacity: 0.9;
+            font-family: Menlo, Monaco, Andale Mono, Ubuntu Mono, monospace;
+            font-size: 24px;
+            " type="flex">
 
-            <el-row align="middle" style="width:800px " type="flex">
+                <el-col :span="10">
+                  <div :title="item.name" class="file-name"
+                       style="text-align: left;padding-left: 10px;width: 600px;overflow: hidden">{{ item.name }}
+                  </div>
 
-              <el-col :span="10">
-                <div :title="item.name" class="file-name">{{ item.name }}</div>
+                </el-col>
 
-              </el-col>
+                <el-col :span="4">
+                  <div class="file-size">{{ transformByte(item.size) || item.size }}</div>
+                </el-col>
 
-              <el-col :span="4">
-                <div class="file-size">{{ transformByte(item.size) || item.size }}</div>
-              </el-col>
+                <el-col :span="6">
+                  <el-progress :percentage="item.uploadProgress"/>
+                </el-col>
 
-              <el-col :span="6">
-                <el-progress :percentage="item.uploadProgress"/>
-              </el-col>
+                <el-col :span="4" style="background: rgb(10,201,40);border-radius: 5px;">
+                  <div>
+                    <el-tag v-if="item.status === '等待上传'"
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;" type="info">等待上传
+                    </el-tag>
+                    <el-tag v-else-if="item.status === '校验MD5'"
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;" type="warning">校验MD5
+                    </el-tag>
+                    <el-tag v-else-if="item.status === '正在创建序列'"
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;"
+                            type="warning">正在创建序列
+                    </el-tag>
+                    <el-tag v-else-if="item.status === '正在上传'"
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;">正在上传
+                    </el-tag>
+                    <el-tag v-else-if="item.status === '上传成功'"
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;" type="success">上传完成
+                    </el-tag>
+                    <el-tag v-else
+                            size="default" style="color: #1a1a1a;font-size: 18px;font-family: 'Avenir', Helvetica, Arial, sans-serif;" type="danger">上传错误
+                    </el-tag>
+                  </div>
+                </el-col>
 
-              <el-col :span="4">
-                <div>
-                  <el-tag v-if="item.status === '等待上传'" size="default" type="info">等待上传</el-tag>
-                  <el-tag v-else-if="item.status === '校验MD5'" size="default" type="warning">校验MD5</el-tag>
-                  <el-tag v-else-if="item.status === '正在创建序列'" size="default"
-                          type="warning">正在创建序列
-                  </el-tag>
-                  <el-tag v-else-if="item.status === '正在上传'" size="default">正在上传</el-tag>
-                  <el-tag v-else-if="item.status === '上传成功'" size="default" type="success">上传完成</el-tag>
-                  <el-tag v-else size="default" type="danger">上传错误</el-tag>
-                </div>
-              </el-col>
+              </el-row>
 
-            </el-row>
+            </template>
 
-          </template>
+            <div class="file-chunk-list-wrapper"
+                 style="margin: 5px;box-shadow: 2px 3px #1c0662;border-radius: 10px;width: 98%">
+              <el-table :data="item.chunkList" max-height="400"
+                        style="width: 100%;border-radius: 10px;font-family: Menlo, Monaco, Andale Mono, Ubuntu Mono, monospace;font-size: 19px">
+                <el-table-column label="分片序号" prop="chunkNumber" width="180">
+                </el-table-column>
+                <el-table-column label="上传进度" prop="progress">
+                  <template v-slot="{ row }">
+                    <el-progress v-if="!row.status || row.progressStatus === 'normal'"
+                                 :percentage="row.progress"/>
+                    <el-progress v-else :percentage="row.progress" :status="row.progressStatus"
+                                 :stroke-width="14" :text-inside="true"/>
+                  </template>
+                </el-table-column>
+                <el-table-column label="状态" prop="status" width="180">
+                </el-table-column>
+              </el-table>
+            </div>
 
-          <div class="file-chunk-list-wrapper">
-            <el-table :data="item.chunkList" max-height="400" style="width: 100%">
-              <el-table-column label="分片序号" prop="chunkNumber" width="180">
-              </el-table-column>
-              <el-table-column label="上传进度" prop="progress">
-                <template v-slot="{ row }">
-                  <el-progress v-if="!row.status || row.progressStatus === 'normal'"
-                               :percentage="row.progress"/>
-                  <el-progress v-else :percentage="row.progress" :status="row.progressStatus"
-                               :stroke-width="14" :text-inside="true"/>
-                </template>
-              </el-table-column>
-              <el-table-column label="状态" prop="status" width="180">
-              </el-table-column>
-            </el-table>
-          </div>
-
-        </el-collapse-item>
-      </el-collapse>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
     </div>
+
   </div>
 </template>
 
+<style>
+.list::before {
+  background: rgb(157, 181, 194);
+  box-shadow: 3px 3px #242424;
+  border-radius: 10px;
+  width: 65%;
+  height: 80%;
+  content: "";
+  position: absolute;
+  filter: opacity(0.6);
+  -webkit-filter: opacity(0.6);
+  right: 17%;
+  top: 22%;
+}
 
+</style>
 <script>
 
 import {reactive} from 'vue';

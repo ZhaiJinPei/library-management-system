@@ -1,5 +1,6 @@
 package com.example.springboot.common;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.Data;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api("结果封装")
 @ApiModel(value = "Result:响应结果封装类", description = "统一返回数据格式和处理结果")
 @Data
 public class Result {
@@ -43,4 +45,5 @@ public class Result {
         result.setMsg(msg);
         return result;
     }
+
 }

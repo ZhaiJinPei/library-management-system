@@ -1,6 +1,7 @@
 package com.example.springboot.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "归还记录实体类")
 @Data
 public class Retern {
     // data from book

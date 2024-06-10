@@ -27,27 +27,28 @@
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 10px; margin-top: 10px">
       <el-input v-model="params.username" placeholder="Enter username" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.name" placeholder="Enter book's name" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.isbn" placeholder="Enter book's isbn" style="width: 200px; margin-left: 2px"></el-input>
-      <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
-      <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
+      <el-button icon="el-icon-search" style="margin-left: 3px; height: 40px" type="primary" @click="load">Search
+      </el-button>
+      <el-button icon="el-icon-refresh-right" style="margin-left: 3px; height: 40px" type="warning" @click="reset">
+        Reset
+      </el-button>
     </div>
     <!-- table area -->
     <div>
-      <el-table :data="tableData" stripe style="margin-left: 3px;width: 99%">
-        <el-table-column prop="uid" label="User ID" show-overflow-tooltip width="200"></el-table-column>
-        <el-table-column prop="username" label="Username" show-overflow-tooltip width="100"></el-table-column>
+      <el-table :data="tableData" stripe
+                style="margin-left: 3px;width: 99%;font-size: 20px;font-family: 'roboto mono', monospace">
+        <el-table-column label="User ID" prop="uid" show-overflow-tooltip width="500"></el-table-column>
+        <el-table-column label="Username" prop="username" show-overflow-tooltip width="200"></el-table-column>
         <el-table-column prop="name" label="Book Name" show-overflow-tooltip width="500"></el-table-column>
         <el-table-column prop="isbn" label="ISBN" width="150"></el-table-column>
-        <el-table-column prop="cdate" label="Buying Time" width="110" :formatter="createDateFormat"></el-table-column>
-        <el-table-column prop="price" label="Unit Price" width="100"></el-table-column>
-        <el-table-column prop="count" label="Buy Quantity" width="100"></el-table-column>
-        <el-table-column prop="total" label="Total Price" width="100"></el-table-column>
-
-
-
+        <el-table-column :formatter="createDateFormat" label="Buying Time" prop="cdate" width="200"></el-table-column>
+        <el-table-column label="Unit Price" prop="price" width="200"></el-table-column>
+        <el-table-column label="Buy Quantity" prop="count" width="200"></el-table-column>
+        <el-table-column label="Total Price" prop="total" width="200"></el-table-column>
       </el-table>
       <!-- page -->
       <el-pagination
@@ -76,7 +77,7 @@ export default {
       total: 0,
       params: {
         pageNum: 1,
-        pageSize: 10,
+        pageSize: 15,
         username: '',
         isbn: '',
         name: ''

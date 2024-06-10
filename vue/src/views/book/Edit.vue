@@ -26,10 +26,11 @@
         <el-breadcrumb-item>&ensp;<em><strong>Edit Book 编辑图书</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Edit Book
-      编辑图书
+    <div
+        style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px; margin-bottom: 50px;margin-top: 50px">
+      Edit Book 编辑图书
     </div>
-    <div style="width: 50%">
+    <div style="width: 30%;transform: scale(2,2);margin-left: 500px;margin-top: 300px">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="ISBN: " style="margin-left: 2px" prop="isbn">
@@ -73,7 +74,7 @@
       </el-form>
       <!-- button area -->
       <div style="text-align: center">
-        <el-button type="primary" style="margin-left: 2px; height: 40px; min-width: 100px" @click="save">Submit</el-button>
+        <el-button style="height: 40px; min-width: 100px" type="primary" @click="save">Submit</el-button>
       </div>
     </div>
   </div>

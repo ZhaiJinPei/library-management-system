@@ -1,5 +1,6 @@
 package com.example.springboot.config;
 
+import io.swagger.annotations.Api;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -17,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api("Knife4j文档配置")
 @Configuration
 @EnableSwagger2WebMvc
 public class Knife4jConfiguration {

@@ -2,6 +2,7 @@ package com.example.springboot.controller;
 
 import com.example.springboot.common.Result;
 import com.example.springboot.service.ILineChartService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "LineChartController: 折线图相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/lineChart")

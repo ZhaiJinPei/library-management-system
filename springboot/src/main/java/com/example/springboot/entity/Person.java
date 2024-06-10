@@ -1,5 +1,6 @@
 package com.example.springboot.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@ApiModel(value = "人员信息实体类")
 @Data
 public class Person {
     private String email;

@@ -5,6 +5,7 @@ import com.example.springboot.controller.request.ReternPageRequest;
 import com.example.springboot.entity.Borrow;
 import com.example.springboot.entity.Retern;
 import com.example.springboot.service.IReternService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * <p>
  * Copyright (c) 2024-present, Zhai JinPei
  */
+@Api(tags = "ReturnController: 还书相关接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/retern")

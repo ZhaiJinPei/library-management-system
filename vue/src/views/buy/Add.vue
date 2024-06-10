@@ -26,10 +26,13 @@
         <el-breadcrumb-item>&ensp;<em><strong>New Buy Record 新增购买记录</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="font-size: 40px; font-family: 'roboto mono', monospace; margin-bottom: 10px;margin-top: 10px">Add New
+
+    <div
+        style="font-size: 50px; font-family: 'roboto mono', monospace;margin-top: 50px; margin-bottom: 50px;margin-left: 50px">
+      Add New
       Buy Record 新增购买记录
     </div>
-    <div style=" width: 50%">
+    <div style=" width: 30%;transform: scale(2,2);margin-left: 500px;margin-top: 250px">
       <!-- form area -->
       <el-form :inline="true" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item label="ISBN 国际标准书号: " prop="isbn" style="margin-left: 2px">

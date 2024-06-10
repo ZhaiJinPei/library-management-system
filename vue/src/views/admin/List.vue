@@ -27,18 +27,22 @@
       </el-breadcrumb>
     </div>
     <!-- search area -->
-    <div style="margin-bottom: 2px; margin-top: 2px">
+    <div style="margin-bottom: 5px; margin-top: 5px">
       <el-input v-model="params.email" placeholder="Enter admin email" style="width: 200px; margin-left: 2px"></el-input>
       <el-input v-model="params.username" placeholder="Enter username" style="width: 200px; margin-left: 2px"></el-input>
       <el-button type="primary" style="margin-left: 2px; height: 40px" icon="el-icon-search" @click="load">Search</el-button>
-      <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
+      <el-button icon="el-icon-refresh-right" style="margin-left: 3px; height: 40px" type="warning" @click="reset">
+        Reset
+      </el-button>
     </div>
     <!-- table area -->
-    <el-table :data="tableData" stripe style="margin-left:3px;width: 99%">
+    <el-table :data="tableData" stripe
+              style="margin-left:3px;width: 99%;font-size: 24px;font-family: 'roboto mono', monospace">
       <!-- status switch -->
       <el-table-column label="Status" width="100">
         <template v-slot="scope2">
           <el-switch
+              width="50"
               v-model="scope2.row.status"
               active-color="#13ce66"
               inactive-color="#ff4949"
@@ -48,13 +52,13 @@
       </el-table-column>
       <!-- main data -->
       <el-table-column prop="username" label="Username" width="130"></el-table-column>
-      <el-table-column prop="fname" label="First Name" width="130"></el-table-column>
-      <el-table-column prop="lname" label="Last Name" width="130"></el-table-column>
-      <el-table-column prop="email" label="Email" width="220"></el-table-column>
-      <el-table-column prop="province" label="Province/State" width="150"></el-table-column>
-      <el-table-column prop="city" label="City" width="150"></el-table-column>
-      <el-table-column prop="street" label="Street" width="150"></el-table-column>
-      <el-table-column prop="phone" label="Phone" with="80"></el-table-column>
+      <el-table-column label="First Name" prop="fname" width="160"></el-table-column>
+      <el-table-column label="Last Name" prop="lname" width="150"></el-table-column>
+      <el-table-column label="Email" prop="email" width="300"></el-table-column>
+      <el-table-column label="Province/State" prop="province" width="210"></el-table-column>
+      <el-table-column label="City" prop="city" width="250"></el-table-column>
+      <el-table-column label="Street" prop="street" width="250"></el-table-column>
+      <el-table-column label="Phone" prop="phone" with="180"></el-table-column>
       <!-- operations -->
       <el-table-column label="Operations">
         <template v-slot="scope">
@@ -108,7 +112,7 @@ export default {
       form: {},
       params: {
         pageNum: 1,
-        pageSize: 10,
+        pageSize: 15,
         email: '',
         username: '',
       },
