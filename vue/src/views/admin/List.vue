@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Administrators 管理员</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Admin List 管理员详情</strong></em></el-breadcrumb-item>
@@ -37,7 +36,7 @@
     </div>
     <!-- table area -->
     <el-table :data="tableData" border="true" stripe
-              style="margin-left:3px;width: 99%;font-size: 24px;font-family: 'roboto mono', monospace">
+              style="margin-left:3px;width: 95vw;font-size: 24px;font-family: 'roboto mono', monospace">
       <!-- status switch -->
       <el-table-column label="Status" width="100">
         <template v-slot="scope2">

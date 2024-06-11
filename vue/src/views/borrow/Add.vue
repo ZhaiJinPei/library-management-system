@@ -19,7 +19,7 @@
   -->
 
 <template>
-  <div style="padding: 10px;">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px">
     <div
         style="width:99%;margin-left: 5px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -27,11 +27,9 @@
         <el-breadcrumb-item>&ensp;<em><strong>New Borrow Record 新增借阅记录</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <!--    <div-->
-    <!--        class="form-wrapper"-->
-    <!--    ></div>-->
+    <div class="form-wrapper"/>
     <div
-        style="font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
+        style="transform: scale(1);font-size: 50px; font-family: 'roboto mono', monospace; margin-left: 50px;margin-bottom: 50px;margin-top: 50px">
       Add New
       Borrow Record 新增借阅记录
     </div>

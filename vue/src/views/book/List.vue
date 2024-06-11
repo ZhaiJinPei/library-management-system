@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:96%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Books 图书</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Book List 图书详情</strong></em></el-breadcrumb-item>
@@ -39,7 +38,7 @@
     <!-- table area -->
     <div>
       <el-table :data="tableData" border="true" fit="true" stripe
-                style="margin-left: 3px;width: 96%;font-family: 'roboto mono', monospace;font-size: 20px;overflow: scroll">
+                style="margin-left: 3px;width: 95vw;font-family: 'roboto mono', monospace;font-size: 20px;overflow: scroll">
         <el-table-column label="ISBN" prop="isbn" width="100"></el-table-column>
         <el-table-column label="Name" prop="name" resizable="false" show-overflow-tooltip width="150"></el-table-column>
         <el-table-column label="Category" prop="category" width="200"></el-table-column>

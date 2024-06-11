@@ -22,24 +22,20 @@
     <!-- header -->
     <div
         ref="theme6" v-model="themec"
-        style="color: black;height: 80px; line-height: 80px; background: white; width: 100%; margin-bottom: 1px; display: flex;border-bottom: 1px solid;border-bottom-color: black">
+        style="position:fixed;z-index:99;top:0;color: black;height: 6vh; line-height: 6vh; background: white; width: 100vw; margin-bottom: 1vh; display: flex;border-bottom: 0.1vh solid;border-bottom-color: black">
       <!-- logo and title -->
-      <div ref="theme1" v-model="themec" style="width: 1000px;background: #fff9f9">
+      <div ref="theme1" v-model="themec" style="width: 50vw;background: #fff9f9">
         <img ref="theme2" v-model="themec" alt="" src="@/assets/logo.png"
-             style="background: #fff9f9;width: 50px; height: 50px; position: relative; top: 10px; left: 25px">
+             style="background: #fff9f9;width: 2vw; height: 4vh; position: relative; top: 0.7vh; left: 0.5vw">
         <span ref="theme3" v-model="themec"
-              style="background-color: #fff9f9; margin-left: 40px; font-size: 40px; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
+              style="background-color: #fff9f9; margin-left: 1vw; font-size: 3vh; font-family: 'Microsoft YaHei Light',sans-serif">&nbsp;&nbsp;图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;Library Management System</span>
       </div>
-      <!--      <div style="transform: scale(1.1,1.1)">-->
-      <!--        <el-input placeholder="请输入内容" v-model="sinp" @keyup.enter.native="search" class="input-with-select">-->
-      <!--          <el-button slot="append" @click="search" icon="el-icon-search"></el-button>-->
-      <!--        </el-input>-->
-      <!--      </div>-->
+
       <!-- admins' info -->
       <div ref="theme5" v-model="themec"
-           style="color: black;flex: 1; text-align: right; margin-right: 40px;background: #fff9f9">
-        <i class="el-icon-full-screen" style="font-size: 20px;" @click="changeScreen"></i>
-        <div style="display: inline;margin-left: 10px;padding:20px;">
+           style="color: black; flex: 1; text-align: right; margin-right: 1.5vw;background: #fff9f9">
+        <i class="el-icon-full-screen" style="font-size: 1vw;margin-top: 1vh" @click="changeScreen"></i>
+        <div style="display: inline;margin-left: 0.5vw;padding:2vh;">
           <el-switch
               v-model="theme"
               active-color="#409eff"
@@ -48,7 +44,7 @@
               inactive-icon-class="el-icon-sunny"
               inline-prompt
               name="theme"
-              style="padding-bottom:5px;"
+              style="padding-bottom:0.5vh;"
               width="50"
               @change='changeTheme'
           />
@@ -92,7 +88,7 @@
     <div style="display: flex">
       <!-- side -->
       <div ref="theme4" v-model="themec"
-           style="min-width: 65px; max-width: 65px;min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
+           style="z-index: 99;margin-top: 6vh;min-width: 65px; max-width: 65px;min-height: calc(100vh - 82px); height: 200px; overflow: hidden;background-color: white;">
         <el-menu
             :default-active="$route.path"
             :default-opens="['user']"
@@ -245,25 +241,10 @@
            class="el-icon-s-fold"
            id="i-fold"
            style="font-size: 32px;margin-left: 15px;margin-top: 10px" @click="onCollapse"></i>
-
-        <!--                    <el-menu-->
-        <!--                        :default-active="$route.path"-->
-        <!--                        :default-opens="['user']"-->
-        <!--                        :unique-opened="true"-->
-        <!--                        ref="menub"-->
-        <!--                        router-->
-        <!--                        style="position: fixed;min-width:64px;max-width:64px;bottom: 41px;font-family: 'roboto mono', monospace;background: #cfd7dc"-->
-        <!--                    >-->
-        <!--                      <el-menu-item index="/search/vue">-->
-        <!--                        <i class="el-icon-share"></i>-->
-        <!--                        &emsp;&emsp;&emsp;&emsp;-->
-        <!--                      </el-menu-item>-->
-        <!--                    </el-menu>-->
-
       </div>
       <!-- main -->
       <div ref="vantaRef"
-           style="flex: 1;margin:0 ;background: url('http://10.20.245.160:9000/pp0alm-img/waves.gif') no-repeat;background-size: 100% 100%;background-attachment: fixed;">
+           style="flex: 1;margin:0 ;background: url('http://10.20.245.160:9000/pp0alm-img/waves.gif') no-repeat;background-size: 100vw 100vh;background-attachment: fixed;">
         <router-view v-if="isRouterAlive"/>
       </div>
     </div>
@@ -364,15 +345,6 @@ export default {
         this.isRouterAlive = true;
       })
     },
-    //search
-    // search(){
-    //   if (this.sinp !== ''){}
-    //   else {
-    //     if (this.sinp === 'home' || 'userList' || 'addUser' || 'adminList' || 'addAdmin' || 'categoryList' || 'bookList' || 'addBook' || 'buyList' || 'addBuy' || 'borrowList' || 'addBorrow ' || 'reternList' || 'swagger' || 'zipkin' || 'skywalking' || 'minio' ){
-    //       this.$router.push(this.sinp + '/')
-    //     }
-    //   }
-    // },
     //   改变全屏
     changeScreen() {
       if (!ScreenFull.isEnabled) {

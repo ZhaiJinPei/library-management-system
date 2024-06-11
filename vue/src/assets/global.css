@@ -10,3 +10,28 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.form-wrapper {
+    background: rgb(167, 178, 185);
+    box-shadow: 3px 3px #242424;
+    border-radius: 10px;
+    width: 95vw;
+    height: 90vh;
+    content: "";
+    position: absolute;
+    filter: opacity(0.9);
+    -webkit-filter: opacity(0.9);
+    left: 3vw;
+    top: 10vh;
+}
+
+.breadcrumb {
+    width: 95.5vw;
+    margin-left: 0.1vw;
+    padding-top: 0.5vh;
+    height: 20px;
+    font-family: 'roboto mono', monospace;
+    background: #ffffff;
+    border-radius: 0.3vw;
+    box-shadow: 0.1vw 0.1vw rgba(86, 87, 92, 0.66)
+}

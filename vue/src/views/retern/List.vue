@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Book Return 图书归还</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Return Records 归还记录</strong></em></el-breadcrumb-item>
@@ -40,7 +39,7 @@
     <!-- table area -->
     <div>
       <el-table :data="tableData" border="true" stripe
-                style="margin-left: 3px;width: 99%;font-family: 'roboto mono', monospace;font-size: 20px">
+                style="margin-left: 3px;width: 95vw;font-family: 'roboto mono', monospace;font-size: 20px">
         <el-table-column label="User ID" prop="uid" show-overflow-tooltip width="300"></el-table-column>
         <el-table-column label="Username" prop="username" show-overflow-tooltip width="250"></el-table-column>
         <el-table-column label="Phone" prop="phone" width="200"></el-table-column>

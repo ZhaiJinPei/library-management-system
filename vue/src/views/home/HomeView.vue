@@ -18,14 +18,13 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="height: 100%;padding: 10px">
-    <div
-        style="width:99%;margin-left: 10px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius: 5px">
+  <div style="width:90vw;height: 100vh;padding: 0.8vh;margin-top: 6vh;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Homepage 系统主页</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div style="padding: 10px;width: 99%">
+    <div style="padding: 10px;width: 95vw">
       <!-- date range selector -->
       <div>
         <el-select v-model="form.dateRange" placeholder="Select date range" @change="load">
@@ -38,9 +37,9 @@
         </el-select>
       </div>
       <!-- line chart area -->
-      <div style="margin-top: 10px;">
+      <div style="margin-top: 1vh;width: 95vw">
         <el-card>
-          <div id="lineChart" style="width: 100%; height: 700px"></div>
+          <div id="lineChart" style="width: 93vw; height: 55vh"></div>
         </el-card>
       </div>
       <div class="block"
@@ -48,7 +47,7 @@
         <span class="demonstration" style="margin-left: 1px"></span>
         <el-carousel height="150px">
           <el-carousel-item v-for="item in png1" :key="item">
-            <img :src="item" style="opacity: 0.8;width: 100%;height: 100%;"/>
+            <img :src="item" style="opacity: 0.8;width: 95vw;height: 11vh;"/>
           </el-carousel-item>
         </el-carousel>
         <span class="demonstration" style="margin-left: 1px"></span>
@@ -58,7 +57,7 @@
         <span class="demonstration" style="margin-left: 1px"></span>
         <el-carousel height="150px">
           <el-carousel-item v-for="item in png2" :key="item">
-            <img :src="item" style="opacity: 0.8;width: 100%;height: 100%"/>
+            <img :src="item" style="opacity: 0.8;width: 95vw;height: 11vh"/>
           </el-carousel-item>
         </el-carousel>
         <span class="demonstration" style="margin-left: 1px"></span>
@@ -100,9 +99,9 @@ const option = {
     data: ['Borrow', 'Return']
   },
   grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
+    left: '3vw',
+    right: '4vw',
+    bottom: '3vh',
     containLabel: true
   },
   toolbox: {

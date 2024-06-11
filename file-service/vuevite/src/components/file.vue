@@ -7,7 +7,7 @@ Copyright (c) 2024-present, Zhai JinPei
 -->
 <template>
   <div class="container"
-       style="width:100%;height:100%;background: url('http://10.20.245.160:9000/jpg/minioss.png') no-repeat;background-size: 100%;background-attachment: scroll;">
+       style="width:96vw;height:100vh;background: url('http://10.20.245.160:9000/jpg/minioss.png') no-repeat;background-size: 100%;background-attachment: scroll;">
     <h2 style="font-family: 华文楷体,sans-serif;font-size: 50px;">本地文件上传</h2>
     <span style="margin-top: 0;font-size: 22px"><code>url: http://ip:9000/</code></span>
     <br>
@@ -36,7 +36,7 @@ Copyright (c) 2024-present, Zhai JinPei
         }}
       </el-button>
     </el-upload>
-    <div class="list" style="overflow: scroll;height: 80%;margin-top: 35px">
+    <div class="list" style="overflow: scroll;height: 78%;margin-top: 35px">
       <!-- 文件列表 -->
       <div class="file-list-wrapper" style="width: 52%;margin: 200px auto;padding-left: 50px;">
 

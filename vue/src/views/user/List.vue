@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:92%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;width:96vw;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>User 用户</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>User List 用户详情</strong></em></el-breadcrumb-item>
@@ -34,7 +33,7 @@
       <el-button type="warning" style="margin-left: 2px; height: 40px" icon="el-icon-refresh-right" @click="reset">Reset</el-button>
     </div>
     <!-- table area -->
-    <div style="margin-top:10px;margin-right: 10px;width: 92%">
+    <div style="margin-top:10px;margin-right: 10px;width: 95vw">
       <el-table :data="tableData" border="true" stripe
                 style="width: 100%;margin-left: 3px;font-size: 24px;font-family: 'roboto mono', monospace">
         <el-table-column label="Status" prop="status" width="100">

@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:98%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Book Borrow 图书借阅</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Borrow Records 借阅记录</strong></em></el-breadcrumb-item>

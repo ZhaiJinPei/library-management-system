@@ -18,7 +18,7 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div class='footer' style="background: transparent">
+  <div class='footer' style="background: transparent;">
     <span style="padding-right: 20px" @click="law = true">Apache License 2.0</span>
     <el-divider direction="vertical"></el-divider>
     <span style="padding-left: 20px;padding-right: 20px" @click="link = true">Quick Links</span>
@@ -293,7 +293,7 @@
 </style>
 <style scoped>
 .footer {
-  height: 40px;
+  height: 46px;
   text-align: center;
   font-size: 16px;
   font-family: 'roboto mono', monospace, serif;

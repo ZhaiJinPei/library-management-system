@@ -19,17 +19,16 @@
   -->
 
 <template>
-  <div style="padding: 10px;">
-    <div
-        style="width:99%;margin-left: 10px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>New Admin 新增管理员</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Admin List 管理员详情</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-
+    <div class="form-wrapper"/>
     <div
-        style="font-size: 50px; font-family: 'roboto mono', monospace;margin-left: 50px;margin-top: 50px; margin-bottom: 50px">
+        style="transform: scale(1);font-size: 50px; font-family: 'roboto mono', monospace;margin-left: 50px;margin-top: 50px; margin-bottom: 50px">
       Add New Admin 新增管理员
     </div>
 

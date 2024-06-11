@@ -32,7 +32,7 @@ export default {
 }
 </script>
 <template>
-  <div style="margin:0;padding:10px;:100%; height: 97%">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;margin-left: 65px">
     <div
         style="width:99%;margin-left: 3px;margin-bottom:5px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -58,7 +58,7 @@ export default {
     <!--      width: 800px;height:70%;position:fixed;right:20px;top:130px;border-radius:10px;background: #eeeeee;font-family: 'roboto mono', monospace;font-size: 20px;overflow: scroll">-->
     <!--        <file-viewer :url="url" />-->
     <!--      </div>-->
-    <iframe :src="urls" style="width: 99%; height: 100%;overflow: scroll"></iframe>
+    <iframe :src="urls" style="width: 99%; height: 96vh;overflow: scroll"></iframe>
   </div>
 </template>
 

@@ -18,9 +18,8 @@
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
 <template>
-  <div style="padding: 10px">
-    <div
-        style="width:99%;margin-left: 3px;padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 82px;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>Categories 图书类型</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>Category List 类型详情</strong></em></el-breadcrumb-item>
@@ -38,7 +37,7 @@
     <!-- table area -->
     <el-table :data="tableData" :tree-props="{children: 'children', hasChildren: 'hasChildren'}" row-key="id"
               border="true"
-              stripe style="margin-left: 4px;width: 99%;font-size: 20px;font-family: 'roboto mono', monospace">
+              stripe style="margin-left: 4px;width: 95vw;font-size: 20px;font-family: 'roboto mono', monospace">
       <el-table-column prop="id" label="ID" width="100"></el-table-column>
       <el-table-column label="Category Name" prop="name" width="250"></el-table-column>
       <el-table-column prop="remark" label="Remark"></el-table-column>

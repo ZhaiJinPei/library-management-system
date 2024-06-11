@@ -17,23 +17,26 @@
   ~ This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
   ~ Copyright (c) 2024-present, Zhai JinPei
   -->
+<style>
+
+</style>
 <template>
-  <div style="padding: 10px;">
-    <div
-        style="padding-top:5px;height: 20px;font-family: 'roboto mono', monospace;background: #ffffff;border-radius:5px">
+  <div style="height: 100vh;padding: 10px;margin-top: 6vh;">
+    <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item>&ensp;<em><strong>User 用户</strong></em></el-breadcrumb-item>
         <el-breadcrumb-item>&ensp;<em><strong>New User 新增用户</strong></em></el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <!--    <div class="form-wrapper"-->
-    <!--    >-->
+    <div class="form-wrapper"/>
     <div
-        style="font-size: 50px; color: #000000;font-family: 'roboto mono', monospace; margin-top: 90px; margin-left: 95px;margin-bottom: 10px">
+        style="
+        transform: scale(1,1);
+        font-size: 50px; color: #000000;font-family: 'roboto mono', monospace; margin-top: 90px; margin-left: 50px;margin-bottom: 10px">
       Add New
       User 新增用户
     </div>
-    <div style=" width: 40%; margin-left:500px;margin-top:300px;transform: scale(2,2)">
+    <div style=" width: 40vw; margin-left:600px;margin-top:300px;transform: scale(2,2)">
       <!-- form area -->
       <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px">
         <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
