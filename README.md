@@ -14,14 +14,16 @@ limitations under the License.
 
 # 图书管理系统 Library Management System
 
-![Static Badge](https://img.shields.io/badge/vue-v2.6.14-green)
+![Static Badge](https://img.shields.io/badge/vue-v2.6.14_&_v3.3.4-green)
 ![Static Badge](https://img.shields.io/badge/vue_router-v3.5.1-green)
 ![Static Badge](https://img.shields.io/badge/npm-v10.2.3-purple)
+![Static Badge](https://img.shields.io/badge/openapi-swagger_2_&_knife4j-purple)
 ![Static Badge](https://img.shields.io/badge/redis-v5.0.10-yellow)
-![Static Badge](https://img.shields.io/badge/spring_boot-v2.7.7-green)
-![Static Badge](https://img.shields.io/badge/mysql-v8.0-blue)
+![Static Badge](https://img.shields.io/badge/spring_boot-v2.7.7_&_v3.0.2-green)
+![Static Badge](https://img.shields.io/badge/mysql-v8.0_+-blue)
 ![Static Badge](https://img.shields.io/badge/license-apache_2.0-%2356c606)
 ![Static Badge](https://img.shields.io/badge/maven-v3.9.4-red)
+![Static Badge](https://img.shields.io/badge/minio-vRELEASE.2024_06_04T19_20_08Z(go1.22.3_windows/amd64)-gold)
 ![Static Badge](https://img.shields.io/badge/zipkin-v3.4.0-red)
 ![Static Badge](https://img.shields.io/badge/element_ui-v2.15.12-green)
 ![Static Badge](https://img.shields.io/badge/badge-https://shields.io/badges-%235387c6)
