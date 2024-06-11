@@ -38,15 +38,16 @@
     </div>
     <!-- table area -->
     <div>
-      <el-table :data="tableData" stripe
-                style="margin-left: 3px;width: 96%;font-family: 'roboto mono', monospace;font-size: 20px">
-        <el-table-column label="ISBN" prop="isbn" width="150"></el-table-column>
-        <el-table-column label="Name" prop="name" show-overflow-tooltip width="100"></el-table-column>
-        <el-table-column label="Category" prop="category" width="400"></el-table-column>
+      <el-table :data="tableData" border="true" fit="true" stripe
+                style="margin-left: 3px;width: 96%;font-family: 'roboto mono', monospace;font-size: 20px;overflow: scroll">
+        <el-table-column label="ISBN" prop="isbn" width="100"></el-table-column>
+        <el-table-column label="Name" prop="name" resizable="false" show-overflow-tooltip width="150"></el-table-column>
+        <el-table-column label="Category" prop="category" width="200"></el-table-column>
         <el-table-column label="Author" prop="author" width="200"></el-table-column>
         <el-table-column label="Publisher" prop="publisher" show-overflow-tooltip width="200"></el-table-column>
         <el-table-column label="Publish Date" prop="publish_date" width="160"></el-table-column>
-        <el-table-column label="Description" prop="description" show-overflow-tooltip width="400"></el-table-column>
+        <el-table-column label="Description" prop="description" resizable="false" show-overflow-tooltip
+                         width="400"></el-table-column>
         <el-table-column label="Create Date" prop="cDate" width="210"></el-table-column>
         <el-table-column label="Update Date" prop="uDate" width="210"></el-table-column>
         <el-table-column label="Cover" prop="cover" width="110">

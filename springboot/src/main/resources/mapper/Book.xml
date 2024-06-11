@@ -56,10 +56,10 @@
         from book
         <where>
             <if test="name != null and name != ''">
-                name like concat('%', #{ name }, '%') and
+                and name like concat('%', #{ name }, '%')
             </if>
             <if test="isbn != null and isbn != ''">
-                isbn like concat('%', #{ isbn }, '%')
+                and isbn like concat('%', #{ isbn }, '%')
             </if>
         </where>
         order by cDate desc

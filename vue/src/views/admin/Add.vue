@@ -35,7 +35,7 @@
 
     <div style="width: 50%;transform: scale(2,2);">
       <el-form ref="ruleForm" :inline="true" :model="form" :rules="rules" size="30px"
-               style="margin-left: 300px;margin-top: 300px">
+               style="margin-left: 350px;margin-top: 300px">
         <el-form-item label="First Name 本名: " prop="fname" style="margin-left: 2px">
           <el-input v-model="form.fname" placeholder="Enter first name"></el-input>
         </el-form-item>
@@ -66,7 +66,8 @@
       </el-form>
 
       <div style="text-align: center">
-        <el-button style="margin-left: 200px; height: 40px; min-width: 100px" type="primary" @click="save">Submit
+        <el-button style="margin-left: 200px;margin-top: 50px; height: 40px; min-width: 100px" type="primary"
+                   @click="save">Submit
         </el-button>
       </div>
     </div>

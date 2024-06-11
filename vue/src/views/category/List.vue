@@ -37,6 +37,7 @@
     </div>
     <!-- table area -->
     <el-table :data="tableData" :tree-props="{children: 'children', hasChildren: 'hasChildren'}" row-key="id"
+              border="true"
               stripe style="margin-left: 4px;width: 99%;font-size: 20px;font-family: 'roboto mono', monospace">
       <el-table-column prop="id" label="ID" width="100"></el-table-column>
       <el-table-column label="Category Name" prop="name" width="250"></el-table-column>

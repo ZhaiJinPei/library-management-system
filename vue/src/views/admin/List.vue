@@ -36,7 +36,7 @@
       </el-button>
     </div>
     <!-- table area -->
-    <el-table :data="tableData" stripe
+    <el-table :data="tableData" border="true" stripe
               style="margin-left:3px;width: 99%;font-size: 24px;font-family: 'roboto mono', monospace">
       <!-- status switch -->
       <el-table-column label="Status" width="100">

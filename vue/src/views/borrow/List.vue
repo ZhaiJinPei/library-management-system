@@ -39,7 +39,8 @@
     </div>
     <!-- table area -->
     <div style="margin-left: 3px;width: 98%">
-      <el-table :data="tableData" stripe style="width: 100%;font-size: 20px;font-family: 'roboto mono', monospace">
+      <el-table :data="tableData" border="true" stripe
+                style="width: 100%;font-size: 20px;font-family: 'roboto mono', monospace">
         <el-table-column label="User ID" prop="uid" show-overflow-tooltip width="250"></el-table-column>
         <el-table-column label="Username" prop="username" show-overflow-tooltip width="200"></el-table-column>
         <el-table-column label="Phone" prop="phone" width="200"></el-table-column>

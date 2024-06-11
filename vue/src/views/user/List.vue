@@ -35,7 +35,7 @@
     </div>
     <!-- table area -->
     <div style="margin-top:10px;margin-right: 10px;width: 92%">
-      <el-table :data="tableData" stripe
+      <el-table :data="tableData" border="true" stripe
                 style="width: 100%;margin-left: 3px;font-size: 24px;font-family: 'roboto mono', monospace">
         <el-table-column label="Status" prop="status" width="100">
           <template v-slot="scope2">

@@ -34,10 +34,10 @@
       Edit User
       编辑用户
     </div>
-    <div style=" width: 60%">
+    <div style=" width: 70%">
       <!-- form area -->
       <el-form ref="ruleForm" :inline="true" :model="form"
-               :rules="rules" style="margin-left:600px;margin-top:300px;transform: scale(2,2)">
+               :rules="rules" style="margin-left:600px;margin-top:300px;transform: scale(1.5,1.5)">
         <el-form-item label="First Name 本名: " style="margin-left: 2px">
           <el-input v-model="form.fname" placeholder="Enter first name"></el-input>
         </el-form-item>
@@ -83,8 +83,8 @@
         </el-form-item>
       </el-form>
       <!-- button area -->
-      <div style="text-align: center;transform: scale(2,2)">
-        <el-button style="margin-top:150px; height: 40px; min-width: 100px" type="primary" @click="save">Submit
+      <div style="text-align: center;transform: scale(1.2,1.2);margin-top: 100px">
+        <el-button style="margin-top:150px; height: 40px; min-width: 50px" type="primary" @click="save">Submit
         </el-button>
       </div>
     </div>
