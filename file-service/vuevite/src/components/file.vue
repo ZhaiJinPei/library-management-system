@@ -12,6 +12,7 @@ Copyright (c) 2024-present, Zhai JinPei
     <span style="margin-top: 0;font-size: 22px"><code>url: http://ip:9000/</code></span>
     <br>
     <br>
+    <div class="beforep"></div>
     <el-upload ref="upload" :auto-upload="false" :file-list="uploadFileList" :on-change="handleFileChange"
                :on-remove="handleRemove" :show-file-list="false" class="upload-demo" multiple
                style="height: 50px;">
@@ -30,7 +31,7 @@ Copyright (c) 2024-present, Zhai JinPei
 
       <el-button
           style="transform:scale(1.4,1.3);margin: 10px 30px 20px 20px;"
-          :disabled="!uploadIdInfoList[currentFileIndex] || (uploadIdInfoList[currentFileIndex] && uploadIdInfoList[currentFileIndex].status != '正在上传')"
+          :disabled="!uploadIdInfoList[currentFileIndex] || (uploadIdInfoList[currentFileIndex] && uploadIdInfoList[currentFileIndex].status !== '正在上传')"
           :type="isPaused ? 'success' : 'danger'" @click="continueOrPauseUpload">{{
           isPaused ? '继续' : '暂停'
         }}
@@ -124,7 +125,7 @@ Copyright (c) 2024-present, Zhai JinPei
 </template>
 
 <style>
-.list::before {
+.beforep {
   background: rgb(157, 181, 194);
   box-shadow: 3px 3px #242424;
   border-radius: 10px;

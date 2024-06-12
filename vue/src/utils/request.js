@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const request = axios.create({
     baseURL: 'http://10.20.245.160:9090',
-    timeout: 5000
+    timeout: 500000
 })
 
 request.interceptors.request.use(
@@ -20,17 +20,12 @@ request.interceptors.request.use(
 });
 
 request.interceptors.response.use(
-    // config => {
-    //     config.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    //     return config
-    // },
     response => {
         let res = response.data;
         if (typeof res === 'string') {
             res = res ? JSON.parse(res) : res
         }
         return res
-
     },
     error => {
         console.log('err' + error) // for debug
